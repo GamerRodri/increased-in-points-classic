@@ -1,0 +1,95 @@
+body {
+    --preset--color--black: #000000;
+    --preset--color--cyan-bluish-gray: #abb8c3;
+    --preset--color--white: #ffffff;
+    --preset--color--pale-pink: #f78da7;
+    --preset--color--vivid-red: #cf2e2e;
+    --preset--color--luminous-vivid-orange: #ff6900;
+    --preset--color--luminous-vivid-amber: #fcb900;
+    --preset--color--light-green-cyan: #7bdcb5;
+    --preset--color--vivid-green-cyan: #00d084;
+    --preset--color--pale-cyan-blue: #8ed1fc;
+    --preset--color--vivid-cyan-blue: #0693e3;
+    --preset--color--vivid-purple: #9b51e0;
+    font-family: Comic Neue Angular Bold;
+    background: linear-gradient(90deg, #050d1f, #0e2457, #050d1f);
+    color: var(--preset--color--white);
+    font-size: 20px;
+    margin: 20px 20px;
+}
+
+@font-face {
+    font-family: Berlin Sans Bold;
+    src: url(Fonts/BRLNSB.TTF);
+}
+@font-face {
+    font-family: Berlin Sans Demi Bold;
+    src: url(Fonts/BRLNSDB.TTF);
+}
+@font-face {
+    font-family: Berlin Sans Regular;
+    src: url(Fonts/BRLNSR.TTF);
+}
+@font-face {
+    font-family: Comic Neue Angular Bold;
+    src: url(Fonts/COMICNEUEANGULAR-BOLD.TTF);
+}
+@font-face {
+    font-family: Luckiest Guy;
+    src: url(Fonts/LUCKIESTGUY-REGULAR.TTF);
+}
+
+button {
+    font-family: Comic Neue Angular Bold;
+    font-size: 1em;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    background: transparent;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 50%);
+    cursor: pointer;
+}
+
+button#upgrade {
+    text-align: left;
+}
+
+hr {
+    margin-block-start: -0.1em;
+    border: 1px solid #fff;
+}
+
+h1{
+    font-family: Luckiest Guy;
+    font-size: 50px;
+    text-shadow: 5px 5px #000000;
+    letter-spacing: 3px;
+    margin: 0px;
+}
+
+sub{
+    font-size: 25px;
+}
+
+button.tablinks{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 3px 20px;
+}
+
+h6{
+    margin: 0px;
+}
+
+p#points {
+    font-size: 100px;
+    margin: 0px;
+}
+
+p#multiplier {
+    margin: 0px
+}

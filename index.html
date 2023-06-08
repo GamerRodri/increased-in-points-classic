@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Increased In Points</title>
+</head>
+<body>
+  <h1>Increased In Points<sub>v0.1.0</sub></h1>
+  
+  <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'Points')">Points</button>
+    <button class="tablinks" onclick="openTab(event, 'Upgrades')">Upgrades</button>
+  </div>
+  <hr>
+  <div id="Points" class="tabcontent">
+    <p>Click the button to earn points!</p>
+    <p id="points">0</p>
+    <p id="pps">(<span id="pps">0</span>pts/s)</p>
+  
+    <button id="clicker">Click for +<span id="multiplier">0</span>pts</button>
+  </div>
+  
+  <div id="Upgrades" class="tabcontent">
+    <p>You have <span id="points">0</p> points.</p>
+    <button id="upgrade1">Extra Points<h6>+x1 Multiplier</h6><h6>Costs: <span id="upgradeCost1">10</span>pts</h6></button>
+  </div>  
+  
+  <script src="index.js"></script>
+</body>
+</html>
