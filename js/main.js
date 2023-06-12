@@ -114,7 +114,7 @@ document.querySelector("button#prestige").addEventListener("click", () => {
 });
 
 // Update text
-setInterval(function() {
+setInterval(function() {  
   document.querySelector("#points").textContent = points.toFixed(1);
   document.querySelector("#upgradeCost1").textContent = upgradeCosts[1].toFixed(1);
   document.querySelector("#upgradeCost2").textContent = upgradeCosts[2].toFixed(1);

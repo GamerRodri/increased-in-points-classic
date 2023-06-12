@@ -12,8 +12,8 @@ let amountBought = [0,0,0,0]
 // Other variables go here
 let automateCount = 0.01
 
-for i=1;i<upgradeCosts.length;i++ do {
-   document.querySelector(`#upgrade${i}`).addEventListener("click", () => {
+for (let i=1;i<upgradeCosts.length;i++) do {   // Remove this semicolon 
+   document.querySelector(`#upgrade${i}`).addEventListener("click", () => {  
      if (points >= upgradeCosts[i]) {
         amountBought[i] += 1
         points -= upgradeCosts[i]
@@ -30,9 +30,11 @@ for i=1;i<upgradeCosts.length;i++ do {
      }
    });
  }
-document.querySelector("button#prestige").addEventListener("click", () => {
+
+while (document.querySelector("button#prestige").addEventListener("click", () => {
   clearInterval(automationInterval);
-});
+}))
+
 /*
 document.querySelector("#upgrade1").addEventListener("click", () => {
   if (points >= upgradeCost1) {
