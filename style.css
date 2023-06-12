@@ -208,7 +208,7 @@ p#credits-header1, p#credits-header2{
     display: none;
 }
 
-p#credits1, p#credits2{
+p#credits1, p#credits2, p#credits3{
     font-size: 20px;
     text-align: center;
     display: none;
