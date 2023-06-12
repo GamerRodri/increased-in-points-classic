@@ -16,7 +16,7 @@ let prestigePoints = 0;
 document.querySelector("#multiplier").textContent = multi;
 document.querySelector("#clicker").addEventListener("click", () => {
   points += multi;
-  document.querySelector("#points").textContent = points.toFixed(1);
+  document.querySelector("#points").textContent = abv(points.toFixed(1));
   if (points >= 10) {
   }
 });
