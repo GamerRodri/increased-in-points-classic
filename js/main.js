@@ -109,6 +109,10 @@ document.querySelector("button#prestige").addEventListener("click", () => {
   
 });
 
+document.querySelector("button#prestige").addEventListener("click", () => {
+  clearInterval(automationInterval);
+})
+
 // Update text
 setInterval(function() {  
   document.querySelector("#points").textContent = points.toFixed(1);
