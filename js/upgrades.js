@@ -13,9 +13,27 @@ let amountBought = {0,0,0,0}
 let automateCount = 0.01
 
 for i=1;i<upgradeCosts.length;i++ do {
-   console.log(upgradeCosts[i])
+   document.querySelector(`#upgrade${i}`).addEventListener("click", () => {
+     if (points >= upgradeCosts[i]) {
+        amountBought[i] += 1
+        points -= upgradeCosts[i]
+        upgradeCosts[i] *= 1.6
+        if (i==1) {
+           multi += prMulti
+        } else if (i==2) {
+           automationInterval = setInterval(() => {
+               points += automateCount;
+           }, 10);
+        } else if (i==3) {
+           automateCount += 0.1
+        }
+     }
+   });
  }
-
+document.querySelector("button#prestige").addEventListener("click", () => {
+  clearInterval(automationInterval);
+});
+/*
 document.querySelector("#upgrade1").addEventListener("click", () => {
   if (points >= upgradeCost1) {
     points -= upgradeCost1;
@@ -38,10 +56,6 @@ document.querySelector("#upgrade2").addEventListener("click", () => {
   }
 });
 
-document.querySelector("button#prestige").addEventListener("click", () => {
-  clearInterval(automationInterval);
-});
-
 document.querySelector("#upgrade3").addEventListener("click", () => {
   if (points >= upgradeCost3) {
     points -= upgradeCost3;
@@ -50,3 +64,4 @@ document.querySelector("#upgrade3").addEventListener("click", () => {
     amountBought3++;
   }
 });
+*/
