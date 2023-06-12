@@ -1,10 +1,10 @@
 let abv = (number, decPlaces) => {
-  if (!decPlaces) {decPlaces = 1}
+  if (!decPlaces) {decPlaces = 3}
   // 2 decimal places => 100, 3 => 1000, etc
   decPlaces = Math.pow(10, decPlaces)
 
   // Enumerate number abbreviations
-  var abbrev = ['K', 'M', 'B', 'T','qd','Qn','Sx','Sp','O','N','de','Ud','DD','tdD','qdD']
+  var abbrev = ['K', 'M', 'B', 'T','qd','Qn','Sx','Sp','O','N','de','Ud','DD','tdD','qdD','Qnd','SxD','SpD','OcD','NvD','Vgn','UVg','DVg','qtV']
 
   // Go through the array backwards, so we do the largest first
   for (var i = abbrev.length - 1; i >= 0; i--) {
