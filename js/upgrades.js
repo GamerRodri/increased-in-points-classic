@@ -12,7 +12,7 @@ let amountBought = [0,0,0,0]
 // Other variables go here
 let automateCount = 0.01
 
-for i=1;i<upgradeCosts.length;i++ do {
+for (let i=1;i<upgradeCosts.length;i++) do {
    document.querySelector(`#upgrade${i}`).addEventListener("click", () => {
      if (points >= upgradeCosts[i]) {
         amountBought[i] += 1
