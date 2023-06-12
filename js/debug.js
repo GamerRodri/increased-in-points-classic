@@ -8,5 +8,9 @@ DebugSystem.AddPoints = (p) => {
 DebugSystem.AddPrestigePoints = (p) => {
   prestigePoints += p
 }
+
+DebugSystem.AddMulti = (p) => {
+  multi += p
+}
 console.log("Debug tools loaded")
 
