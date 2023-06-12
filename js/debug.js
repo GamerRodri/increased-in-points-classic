@@ -7,5 +7,5 @@ DebugSystem.AddPoints = (p) => {
 DebugSystem.AddPrestigePoints = (p) => {
   prestigePoints += p
 }
-
-module.exports = DebugSystem
+console.log("Debug tools loaded")
+//module.exports = DebugSystem
