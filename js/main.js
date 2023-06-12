@@ -116,14 +116,14 @@ document.querySelector("button#prestige").addEventListener("click", () => {
 // Update text
 setInterval(function() {
   document.querySelector("#points").textContent = points.toFixed(1);
-  document.querySelector("#upgradeCost1").textContent = upgradeCosts[1].toFixed(1);
-  document.querySelector("#upgradeCost2").textContent = upgradeCosts[2].toFixed(1);
-  document.querySelector("#upgradeCost3").textContent = upgradeCosts[3].toFixed(1);
+  document.querySelector("#upgradeCost1").textContent = window.upgradeCosts[1].toFixed(1);
+  document.querySelector("#upgradeCost2").textContent = window.upgradeCosts[2].toFixed(1);
+  document.querySelector("#upgradeCost3").textContent = window.upgradeCosts[3].toFixed(1);
   document.querySelector("span#pps").textContent = (automateCount * 1000 * pointsPerSecond / 10).toFixed(1);
   document.querySelector("#multiplier").textContent = multi;
-  document.querySelector("#amountBought1").textContent = amountBought[1];
-  document.querySelector("#amountBought2").textContent = amountBought[2];
-  document.querySelector("#amountBought3").textContent = amountBought[3];
+  document.querySelector("#amountBought1").textContent = window.amountBought[1];
+  document.querySelector("#amountBought2").textContent = window.amountBought[2];
+  document.querySelector("#amountBought3").textContent = window.amountBought[3];
 }, 10);
 
 // Get the radio buttons
