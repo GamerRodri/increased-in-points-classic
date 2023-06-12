@@ -9,7 +9,7 @@ if (points >= prestigeRequirement) {
     document.querySelector("#prestige").style.display = "none";
 }
 fullPrestigeReq = points - prestigeRequirement  
-document.querySelector("#prestige-amount").textContent = (fullPrestigeReq / 2500).toFixed(2);
+document.querySelector("#prestige-amount").textContent = abv(fullPrestigeReq / 2500).toFixed(2));
 }, 10);
 
 ////////////////////////////////////
@@ -31,7 +31,7 @@ document.querySelector("#pr-upgrade1").addEventListener("click", () => {
 
 // Update text ( for prestige tab )
 setInterval(function() {
-    document.querySelector("h2#prestige").textContent = prestigePoints.toFixed(2);
-    document.querySelector("#prUpgradeCost1").textContent = prUpgradeCost1.toFixed(2);
+    document.querySelector("h2#prestige").textContent = abv(prestigePoints.toFixed(2));
+    document.querySelector("#prUpgradeCost1").textContent = abv(prUpgradeCost1.toFixed(2));
     document.querySelector("#prAmountBought1").textContent = prAmountBought1;
 }, 0);
