@@ -3,7 +3,7 @@ let abv = (number, decPlaces) => {
   // 2 decimal places => 100, 3 => 1000, etc
   decPlaces = Math.pow(10, decPlaces)
 
-  // Enumerate number abbreviations
+  // Enumerate number abbreviations, now up to qtV!
   var abbrev = ['K', 'M', 'B', 'T','qd','Qn','Sx','Sp','O','N','de','Ud','DD','tdD','qdD','Qnd','SxD','SpD','OcD','NvD','Vgn','UVg','DVg','qtV']
 
   // Go through the array backwards, so we do the largest first
