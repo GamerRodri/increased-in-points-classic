@@ -103,10 +103,9 @@ document.querySelector("button#prestige").addEventListener("click", () => {
   points = 0;
   multi = 1;
   pointsPerSecond = 0;
-  upgradesCost = ucDef
+  upgradeCosts = ucDef
   amountBought = abDef
   automateCount = 0.01;
-  
 });
 
 document.querySelector("button#prestige").addEventListener("click", () => {

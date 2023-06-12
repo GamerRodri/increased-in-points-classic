@@ -11,8 +11,8 @@ let amountBought3 = 0;
 let upgradeCosts = [0,10,50,250]
 let amountBought = [0,0,0,0]
 
-let ucDef = upgradeCosts
-let abDef = amountBought
+let ucDef = [0,10,50,250]
+let abDef = [0,0,0,0]
 // Other variables go here
 let automateCount = 0.01
 
