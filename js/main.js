@@ -110,14 +110,15 @@ document.querySelector("button#prestige").addEventListener("click", () => {
   upgradeCost3 = 250;
   amountBought3 = 0;
   automateCount = 0.01;
+  
 });
 
 // Update text
 setInterval(function() {
   document.querySelector("#points").textContent = points.toFixed(1);
-  document.querySelector("#upgradeCost1").textContent = upgradeCost1.toFixed(1);
-  document.querySelector("#upgradeCost2").textContent = upgradeCost2.toFixed(1);
-  document.querySelector("#upgradeCost3").textContent = upgradeCost3.toFixed(1);
+  document.querySelector("#upgradeCost1").textContent = upgradeCosts[1].toFixed(1);
+  document.querySelector("#upgradeCost2").textContent = upgradeCosts[2].toFixed(1);
+  document.querySelector("#upgradeCost3").textContent = upgradeCosts[3].toFixed(1);
   document.querySelector("span#pps").textContent = (automateCount * 1000 * pointsPerSecond / 10).toFixed(1);
   document.querySelector("#multiplier").textContent = multi;
   document.querySelector("#amountBought1").textContent = amountBought1;
