@@ -117,7 +117,7 @@ document.querySelector("button#prestige").addEventListener("click", () => {
 // Update text
 setInterval(function() {  
   for (let i=1;i<upgradeCosts.length;i++) {
-    document.querySelector(`#upgradeCost${i}`).textContent = abv(upgradeCosts[1].toFixed(1));
+    document.querySelector(`#upgradeCost${i}`).textContent = abv(upgradeCosts[i].toFixed(1));
     document.querySelector(`#amountBought${i}`).textContent = amountBought[i]
   }
   document.querySelector("#points").textContent = abv(points.toFixed(1));
