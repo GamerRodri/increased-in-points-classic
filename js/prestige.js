@@ -9,7 +9,7 @@ if (points >= prestigeRequirement) {
     document.querySelector("#prestige").style.display = "none";
 }
 fullPrestigeReq = points - prestigeRequirement  
-document.querySelector("#prestige-amount").textContent = abv(fullPrestigeReq / 2500).toFixed(2));
+document.querySelector("#prestige-amount").textContent = abv((fullPrestigeReq / 2500).toFixed(2));
 }, 10);
 
 ////////////////////////////////////
