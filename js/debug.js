@@ -1,3 +1,4 @@
+console.log("Loading debug tools")
 const DebugSystem = {}
 
 DebugSystem.AddPoints = (p) => {
@@ -8,3 +9,4 @@ DebugSystem.AddPrestigePoints = (p) => {
   prestigePoints += p
 }
 console.log("Debug tools loaded")
+
