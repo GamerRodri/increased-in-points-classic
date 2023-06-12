@@ -1,0 +1,30 @@
+document.querySelector("#upgrade1").addEventListener("click", () => {
+  if (points >= upgradeCost1) {
+    points -= upgradeCost1;
+    multi += prMulti;
+    upgradeCost1 *= 1.6;
+    amountBought1++;
+  }
+});
+
+let automationInterval;
+
+document.querySelector("#upgrade2").addEventListener("click", () => {
+  if (points >= upgradeCost2) {
+    points -= upgradeCost2;
+    automationInterval = setInterval(() => {
+      points += automateCount;
+    }, 10);
+    upgradeCost2 *= 1.6;
+    amountBought2++;
+  }
+});
+
+document.querySelector("#upgrade3").addEventListener("click", () => {
+  if (points >= upgradeCost3) {
+    points -= upgradeCost3;
+    automateCount += 0.1;
+    upgradeCost3 *= 1.6;
+    amountBought3++;
+  }
+});
