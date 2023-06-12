@@ -10,6 +10,9 @@ let amountBought3 = 0;
 //define tables
 let upgradeCosts = [0,10,50,250]
 let amountBought = [0,0,0,0]
+
+let ucDef = upgradeCosts
+let abDef = amountBought
 // Other variables go here
 let automateCount = 0.01
 
