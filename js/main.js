@@ -35,7 +35,7 @@ function openTab(evt, tabName) {
   }
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
-  document.querySelector("#points").textContent = points.toFixed(1);
+  document.querySelector("#points").textContent = abv(points.toFixed(1));
 }
 
 let pointsPerSecond = 0;
@@ -92,7 +92,7 @@ document.querySelector("#tablink5").addEventListener("click", () => {
   document.querySelector("p#prestige2").style.display = "block";
   document.querySelector("h2#prestige").style.display = "block";
   document.querySelector(".prestige-upgrades").style.display = "block";
-  document.querySelector("h2#prestige").textContent = prestigePoints.toFixed(2);
+  document.querySelector("h2#prestige").textContent = abv(prestigePoints.toFixed(2));
 });
 // Tablink scripts end here
 
@@ -116,9 +116,9 @@ document.querySelector("button#prestige").addEventListener("click", () => {
 // Update text
 setInterval(function() {  
   document.querySelector("#points").textContent = points.toFixed(1);
-  document.querySelector("#upgradeCost1").textContent = upgradeCosts[1].toFixed(1);
-  document.querySelector("#upgradeCost2").textContent = upgradeCosts[2].toFixed(1);
-  document.querySelector("#upgradeCost3").textContent = upgradeCosts[3].toFixed(1);
+  document.querySelector("#upgradeCost1").textContent = abv(upgradeCosts[1].toFixed(1));
+  document.querySelector("#upgradeCost2").textContent = abv(upgradeCosts[2].toFixed(1));
+  document.querySelector("#upgradeCost3").textContent = abv(upgradeCosts[3].toFixed(1));
   document.querySelector("span#pps").textContent = (automateCount * 1000 * pointsPerSecond / 10).toFixed(1);
   document.querySelector("#multiplier").textContent = multi;
   document.querySelector("#amountBought1").textContent = amountBought[1];
@@ -138,7 +138,7 @@ titleStyleRadios.forEach(radio => {
     // Update the title based on selected option
     setInterval(function() {
       if (titleStyle == 1) {
-        document.title = 'Increased in Points - ' + points.toFixed(1);
+        document.title = 'Increased in Points - ' + abv(points.toFixed(1));
       } else {
         document.title = 'Increased In Points'; 
       }
