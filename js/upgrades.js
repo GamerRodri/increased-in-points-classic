@@ -7,8 +7,8 @@ let amountBought2 = 0;
 let upgradeCost3 = 250;
 let amountBought3 = 0;
 //0 is to skip javascript's first index number in a table, which is 0
-let upgradeCosts = {0,10,50,250}
-let amountBought = {0,0,0,0}
+let upgradeCosts = [0,10,50,250]
+let amountBought = [0,0,0,0]
 // Other variables go here
 let automateCount = 0.01
 
