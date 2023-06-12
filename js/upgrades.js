@@ -7,17 +7,17 @@ let amountBought2 = 0;
 let upgradeCost3 = 250;
 let amountBought3 = 0;
 //0 is to skip javascript's first index number in a table, which is 0
-let upgradeCosts = [0,10,50,250]
-let amountBought = [0,0,0,0]
+window.upgradeCosts = [0,10,50,250]
+wwindow.amountBought = [0,0,0,0]
 // Other variables go here
 let automateCount = 0.01
 
-for (let i=1;i<upgradeCosts.length;i++) do {
+for (let i=1;i<window.upgradeCosts.length;i++) do {
    document.querySelector(`#upgrade${i}`).addEventListener("click", () => {
-     if (points >= upgradeCosts[i]) {
-        amountBought[i] += 1
-        points -= upgradeCosts[i]
-        upgradeCosts[i] *= 1.6
+     if (points >= window.upgradeCosts[i]) {
+        wwindow.amountBought[i] += 1
+        points -= window.upgradeCosts[i]
+        window.upgradeCosts[i] *= 1.6
         if (i==1) {
            multi += prMulti
         } else if (i==2) {
