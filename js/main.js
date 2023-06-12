@@ -121,9 +121,9 @@ setInterval(function() {
   document.querySelector("#upgradeCost3").textContent = upgradeCosts[3].toFixed(1);
   document.querySelector("span#pps").textContent = (automateCount * 1000 * pointsPerSecond / 10).toFixed(1);
   document.querySelector("#multiplier").textContent = multi;
-  document.querySelector("#amountBought1").textContent = amountBought1;
-  document.querySelector("#amountBought2").textContent = amountBought2;
-  document.querySelector("#amountBought3").textContent = amountBought3;
+  document.querySelector("#amountBought1").textContent = amountBought[1];
+  document.querySelector("#amountBought2").textContent = amountBought[2];
+  document.querySelector("#amountBought3").textContent = amountBought[3];
 }, 10);
 
 // Get the radio buttons
