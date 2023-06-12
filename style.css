@@ -1,42 +1,30 @@
 body {
-    --preset--color--black: #000000;
-    --preset--color--cyan-bluish-gray: #abb8c3;
-    --preset--color--white: #ffffff;
-    --preset--color--pale-pink: #f78da7;
-    --preset--color--vivid-red: #cf2e2e;
-    --preset--color--luminous-vivid-orange: #ff6900;
-    --preset--color--luminous-vivid-amber: #fcb900;
-    --preset--color--light-green-cyan: #7bdcb5;
-    --preset--color--vivid-green-cyan: #00d084;
-    --preset--color--pale-cyan-blue: #8ed1fc;
-    --preset--color--vivid-cyan-blue: #0693e3;
-    --preset--color--vivid-purple: #9b51e0;
     font-family: Comic Neue Angular Bold;
     background: linear-gradient(90deg, #050d1f, #0e2457, #050d1f);
-    color: var(--preset--color--white);
+    color: #fff;
     font-size: 20px;
     margin: 20px 20px;
 }
 
 @font-face {
     font-family: Berlin Sans Bold;
-    src: url(Fonts/BRLNSB.TTF);
+    src: url(fonts/BRLNSB.TTF);
 }
 @font-face {
     font-family: Berlin Sans Demi Bold;
-    src: url(Fonts/BRLNSDB.TTF);
+    src: url(fonts/BRLNSDB.TTF);
 }
 @font-face {
     font-family: Berlin Sans Regular;
-    src: url(Fonts/BRLNSR.TTF);
+    src: url(fonts/BRLNSR.TTF);
 }
 @font-face {
     font-family: Comic Neue Angular Bold;
-    src: url(Fonts/COMICNEUEANGULAR-BOLD.TTF);
+    src: url(fonts/COMICNEUEANGULAR-BOLD.TTF);
 }
 @font-face {
     font-family: Luckiest Guy;
-    src: url(Fonts/LUCKIESTGUY-REGULAR.TTF);
+    src: url(fonts/LUCKIESTGUY-REGULAR.TTF);
 }
 
 button {
@@ -54,26 +42,17 @@ button:hover {
     cursor: pointer;
 }
 
-button#upgrade {
-    text-align: left;
+#amountBought1, #amountBought2, #amountBought3{
+    font-size: 15px;
+    margin: -4% -10%;
+    float: right; 
 }
 
-hr {
-    margin-block-start: -0.1em;
-    border: 1px solid #fff;
-}
-
-h1{
-    font-family: Luckiest Guy;
-    font-size: 50px;
-    text-shadow: 5px 5px #000000;
-    letter-spacing: 3px;
-    margin: 0px;
-}
-
-sub{
-    font-size: 25px;
-}
+#prAmountBought1{
+    font-size: 15px;
+    margin: -4% -10%;
+    float: right; 
+}  
 
 button.tablinks{
     border-bottom-left-radius: 0px;
@@ -81,8 +60,162 @@ button.tablinks{
     padding: 3px 20px;
 }
 
+.prestige-upgrades{
+    display: none;
+}
+
+#tablink5{
+    display: none;
+}
+
+button#prestige{
+    display: none;
+    background-color: rgba(0, 200, 255, 10%);
+    border-color: #8df;
+    color: rgb(226, 243, 255);
+    text-shadow: 0px 0px 7px #00c8ff;
+    margin-top: 10px;
+}
+
+button#prestige:hover {
+    background: rgba(0, 200, 255, 50%);
+    cursor: pointer;
+}
+
+#tablink3,#tablink4{
+    float: right;
+}
+
+hr#tab {
+    margin-block-start: -0.1em;
+    border: 1px solid #fff;
+}
+
+hr {
+    margin-top: 2px;
+}
+
+#Options{
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0.2rem 1rem;
+}
+
+.options-panel {
+    width: 25%;
+    min-width: 425px;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border: 2px solid;
+    flex-wrap: nowrap;
+}
+
+#titlestyle {
+    font-size: 30px;
+}
+
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+#alert {
+    opacity: 0;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    animation-name: fadeInFadeOut;
+    animation-duration: 5s;
+}
+
+#points.upgrades-active::before {
+    content: "You have ";
+}
+
+#points.upgrades-active::after {
+    content: " points.";
+}
+
+.alert2{
+    animation-delay: 5s;
+}
+  
+@keyframes fadeInFadeOut {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    75% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* unvisited link */
+a:link {
+    color: rgb(255, 255, 255);
+}
+  
+/* visited link */
+a:visited {
+    color: rgb(255, 255, 255);
+}
+
+sub{
+    font-size: 25px;
+}
+  
+h1{
+    font-family: Luckiest Guy;
+    font-size: 50px;
+    text-shadow: 5px 5px #000000;
+    letter-spacing: 3px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+h2#prestige{
+    display: none;
+    margin: 0px;
+    font-size: 100px;
+    border-color: #8df;
+    text-shadow: 0px 0px 20px #00c8ff;
+}
+
+h2#pr-upgs-header{
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+
 h6{
     margin: 0px;
+}
+
+p{
+    margin: 30px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+p#credits-header1, p#credits-header2{
+    font-size: 60px;
+    text-align: center;
+    margin: 10px;
+    display: none;
+}
+
+p#credits1, p#credits2{
+    font-size: 20px;
+    text-align: center;
+    display: none;
+}
+
+p#pps{
+    margin: 10px;
+    margin-left: 0px;
 }
 
 p#points {
@@ -92,4 +225,17 @@ p#points {
 
 p#multiplier {
     margin: 0px
+}
+
+p#prestige1, p#prestige2{
+    display: none;
+    margin: 0px;
+    font-size: 30px;
+    border-color: #8df;
+    color: rgb(226, 243, 255);
+    text-shadow: 0px 0px 20px #00c8ff;
+}
+
+p#prestige1{
+    margin-top: 20px;
 }

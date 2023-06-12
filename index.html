@@ -3,29 +3,75 @@
 <head>
   <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8">
+  <link rel="icon" href="favicon.png"/>
   <title>Increased In Points</title>
 </head>
 <body>
   <h1>Increased In Points<sub>v0.1.0</sub></h1>
   
   <div class="tab">
-    <button class="tablinks" onclick="openTab(event, 'Points')">Points</button>
-    <button class="tablinks" onclick="openTab(event, 'Upgrades')">Upgrades</button>
+    <button class="tablinks" span id="tablink1" onclick="openTab(event, 'Points')">Points</button>
+    <button class="tablinks" span id="tablink2" onclick="openTab(event, 'Upgrades')">Upgrades</button>
+    <button class="tablinks" span id="tablink3" onclick="openTab(event, 'Credits')">Credits</button>
+    <button class="tablinks" span id="tablink4" onclick="openTab(event, 'Options')">Options</button>
+    <button class="tablinks" span id="tablink5" onclick="openTab(event, 'Prestige')">Prestige</button>
   </div>
-  <hr>
+  <hr id="tab">
+  <p id="points">0.0</p>
+  <div class="alert1" id="alert">
+    <p>Click the button to get points!</p> 
+  </div>
+  <div class="alert2" id="alert">
+    <p>The upgrades can help you progress the game.</p>
+  </div>
+
   <div id="Points" class="tabcontent">
-    <p>Click the button to earn points!</p>
-    <p id="points">0</p>
-    <p id="pps">(<span id="pps">0</span>pts/s)</p>
-  
+    <p id="pps">(<span id="pps">0.0</span>pts/s)</p>
     <button id="clicker">Click for +<span id="multiplier">0</span>pts</button>
+    <br>
+    <button id="prestige">Prestige and get +<span id="prestige-amount">0</span> prestige points.</button>
   </div>
   
   <div id="Upgrades" class="tabcontent">
-    <p>You have <span id="points">0</p> points.</p>
-    <button id="upgrade1">Extra Points<h6>+x1 Multiplier</h6><h6>Costs: <span id="upgradeCost1">10</span>pts</h6></button>
-  </div>  
+    <button id="upgrade1"><span id="amountBought1">0</span>Extra Points<h6>+x1 Multiplier</h6><h6>Costs: <span id="upgradeCost1">10</span>pts</h6></button>
+    <button id="upgrade2"><span id="amountBought2">0</span>Automation<h6>+0.01 points every ms</h6><h6>Costs: <span id="upgradeCost2">50</span>pts</h6></button>
+    <button id="upgrade3"><span id="amountBought3">0</span>Double The Goods<h6>Automation scales further</h6><h6>Costs: <span id="upgradeCost3">250</span>pts</h6></button>
+  </div>
+
+  <div id="Credits" class="tabcontent">
+    <p id="credits-header1">Inspiration</p>
+    <p id="credits1">Omega Layers by Veprogames<br>Cookie Clicker by Orteil<br>Grass Cutting Incremental by LethalDolphin</p>
+    <p id="credits-header2">Coding</p>
+    <p id="credits2">Some by RodriGamer and most from Sourcegraph Cody<br>CSS Tips from <a href="https://www.w3schools.com/">W3Schools</a></p>
+  </div>
+
+  <div id="Options" class="tabcontent">
+    <div id="options-panel-container">
+      <div class="options-panel">
+        <span id="titlestyle">Title Style</span>
+        <br>
+        <fieldset>
+          <label><input type="radio" name="titleStyle" value="0" checked> None</label><br/> 
+          <label><input type="radio" name="titleStyle" value="1"> Points</label>
+        </fieldset>
+      </div>
+    </div>
+    <center><h2>Save system coming soon!</h2></center>
+  </div>
   
-  <script src="index.js"></script>
+  <div id="Prestige" class="tabcontent">
+    <p id="prestige1">You have:</p>
+    <h2 id="prestige">0.0</h2>
+    <p id="prestige2">prestige points.</p>
+    <div class="prestige-upgrades">
+      <h2 id="pr-upgs-header">Prestige Upgrades</h2>
+      <hr>
+      <button id="pr-upgrade1"><span id="prAmountBought1">0</span>Ultra Points<h6>Multi is increased for E.P</h6><h6>Costs: <span id="prUpgradeCost1">10</span>PP</h6></button>
+    </div>
+  </div>
+  
+  <script src="js/main.js"></script>
+  <script src="js/upgrades.js"></script>
+  <script src="js/prestige.js"></script>
 </body>
 </html>
