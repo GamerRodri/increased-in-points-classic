@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="alert.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.0129245"
+     inkscape:cx="234.96321"
+     inkscape:cy="94.281457"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1085">
+      <stop
+         style="stop-color:#ff6b34;stop-opacity:1;"
+         offset="0"
+         id="stop1081" />
+      <stop
+         style="stop-color:#ff1818;stop-opacity:1;"
+         offset="1"
+         id="stop1083" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1085"
+       id="linearGradient1087"
+       x1="46.914177"
+       y1="33.246265"
+       x2="60.951492"
+       y2="47.283581"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.7815391,0,0,1.7815391,-83.579442,-59.229523)" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <circle
+       style="fill:url(#linearGradient1087);fill-opacity:1;stroke-width:1.037;stroke-linecap:round;paint-order:stroke fill markers"
+       id="path286"
+       cx="12.504011"
+       cy="12.504011"
+       r="12.504011" />
+    <path
+       d="M 10.974352,14.828144 9.6699893,4.345818 h 5.6680447 l -1.351792,10.482326 z m -0.830049,5.834055 V 16.2748 h 4.695702 v 4.387399 z"
+       id="path294"
+       style="font-size:13.3119px;line-height:0.1;font-family:'Archivo Black';-inkscape-font-specification:'Archivo Black, ';fill:#ffffff;stroke-width:0.271742;stroke-linecap:round;paint-order:stroke fill markers" />
+  </g>
+</svg>
