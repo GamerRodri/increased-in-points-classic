@@ -24,7 +24,9 @@ let abv = (number, decPlaces) => {
       }
 
       // Add the letter for the abbreviation
-      number += abbrev[i]
+      if (number <= Math.pow(10,abbrev.length)) {
+        number += abbrev[i]
+      }
 
       // We are done... stop
       break
