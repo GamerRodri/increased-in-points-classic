@@ -4,7 +4,7 @@ let abv = (number, decPlaces) => {
   decPlaces = Math.pow(10, decPlaces)
 
   // Enumerate number abbreviations, now up to qtV!
-  var abbrev = ['K', 'M', 'B', 'T','qd','Qn','Sx','Sp','O','N','de','Ud','DD','tdD','qdD','Qnd','SxD','SpD','OcD','NvD','Vgn','UVg','DVg','qtV']
+  var abbrev = ['K', 'M', 'B', 'T','qd','Qn','Sx','Sp','O','N','de','Ud','DD','tdD','qdD','Qnd','SxD','SpD','OcD','NvD','Vgn','UVg','DVg','qtV','QnV','SeV','SPG','OVG','NVG','TGN','UTG','DTG','tsTG','qtTG','QnTG']
   if (number >= Math.pow(10,abbrev.length)) {
     return number
   }
