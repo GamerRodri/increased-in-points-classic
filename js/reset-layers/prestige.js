@@ -52,9 +52,9 @@ for (let i=1;i<prUpgradeCosts.length;i++) {
 
 // Update text ( for prestige tab )
 setInterval(function() {
-    document.querySelector("h2#prestige").textContent = abv(prestigePoints.toFixed(2));
+    document.querySelector("h2#prestige").textContent = abv(prestigePoints,2);
     for (let i=1;i<prUpgradeCosts.length;i++) {
-        document.querySelector(`#prUpgradeCost${i}`).textContent = abv(prUpgradeCosts[i].toFixed(2));
+        document.querySelector(`#prUpgradeCost${i}`).textContent = abv(prUpgradeCosts[i].toFixed(1));
         document.querySelector(`#prAmountBought${i}`).textContent = prAmountBought[i];
     }
 }, 10);

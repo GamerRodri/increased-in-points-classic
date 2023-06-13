@@ -1,6 +1,9 @@
 let crystallizeRequirement = 2500000 
 let fullCrystallizeReq = 0
 let cyMulti = 1
+let cyIncrease = 1
+let multiIncrease = 1
+var multiToFixedChange = 0
 
 setInterval(function() {
 if (prestigePoints >= crystallizeRequirement) {
@@ -17,28 +20,34 @@ document.querySelector("#crystal-amount").textContent = abv((fullCrystallizeReq 
 ////////////////////////////////////
 
 // Upgrade costs go here
-let cyUpgradeCosts = [0,25]
-let cyAmountBought = [0,0]
+let cyUpgradeCosts = [0,25,80]
+let cyAmountBought = [0,0,0]
 
 // These variables are permanent and should not change
-let cyUcDef = [0,25]
-let cyAbDef = [0,0]
+let cyUcDef = [0,25,80]
+let cyAbDef = [0,0,0]
 
 setInterval (function() {
-  cyUcDef = [0,25]
-  cyAbDef = [0,0]
+  cyUcDef = [0,25,80]
+  cyAbDef = [0,0,0]
 }, 10)
 // These variables are permanent and should not change
 
 for (let i=1;i<cyUpgradeCosts.length;i++) {
     document.querySelector(`#cy-upgrade${i}`).addEventListener("click", () => {
       if (crystals >= cyUpgradeCosts[i]) {
-          cyAmountBought[i] += 1
-          crystals -= cyUpgradeCosts[i]
-          cyUpgradeCosts[i] *= 1.6
-        if (i==1) {
-          cyMulti++
-        }
+            cyAmountBought[i] += 1
+            crystals -= cyUpgradeCosts[i]
+            cyUpgradeCosts[i] *= 1.6
+          if (i==1) {
+            cyMulti++
+          } else if (i==2) {
+            cyIncrease += 0.002
+            multiToFixedChange = 2
+            cyIncreaseInterval = setInterval (() => {
+              multiIncrease += cyIncrease
+            }, 10)
+          }
         }
       }
     )

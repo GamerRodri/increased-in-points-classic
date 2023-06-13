@@ -4,18 +4,18 @@
 let upgradeCosts = [0,10,50,250]
 let amountBought = [0,0,0,0]
 
-// These variables are permanent and should not change
-let ucDef = [0,10,50,250]
-let abDef = [0,0,0,0]
-// These variables are permanent and should not change
-
 // Other variables go here
 let automateCount = 0;
 let automateMulti = 1;
 let pointsPerSecond = 0;
 
+// These variables are permanent and should not change
+let ucDef;
+let abDef;
+// These variables are permanent and should not change
+
 setInterval(function() {
-  points += automateCount * automateMulti;
+  points += automateCount * automateMulti * multiIncrease;
   // These variables are permanent and should not change
   ucDef = [0,10,50,250]
   abDef = [0,0,0,0]

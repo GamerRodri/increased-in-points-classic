@@ -16,7 +16,7 @@ let prestigePoints = 0;
 let crystals = 0;
 document.querySelector("#multiplier").textContent = multi;
 document.querySelector("#clicker").addEventListener("click", () => {
-  points += multi;
+  points += multi * multiIncrease;
 });
 
 document.getElementById("Upgrades").style.display = "none";
@@ -117,8 +117,8 @@ setInterval(function() {
     document.querySelector(`#amountBought${i}`).textContent = amountBought[i]
   }
   document.querySelector("#points").textContent = abv(points.toFixed(1));
-  document.querySelector("span#pps").textContent = (automateCount * automateMulti * 100).toFixed(1);
-  document.querySelector("#multiplier").textContent = multi;
+  document.querySelector("span#pps").textContent = abv((automateCount * automateMulti * 100).toFixed(1));
+  document.querySelector("#multiplier").textContent = abv((multi * multiIncrease).toFixed(multiToFixedChange));
   /*
   document.querySelector("#upgradeCost1").textContent = abv(upgradeCosts[1].toFixed(1));
   document.querySelector("#upgradeCost2").textContent = abv(upgradeCosts[2].toFixed(1));
