@@ -4,11 +4,10 @@ let abv = (number, decPlaces) => {
   decPlaces = Math.pow(10, decPlaces)
 
   // Enumerate number abbreviations, now up to qtV!
-  var abbrev = ['K', 'M', 'B', 'T','qd','Qn','Sx','Sp','O','N','de','Ud','DD','tdD','qdD','Qnd','SxD','SpD','OcD','NvD','Vgn','UVg','DVg','qtV']
-  if (number >= Math.pow(10,abbrev.length)) {
-    return number
+  var abbrev = ['K', 'M', 'B', 'T','qd','Qn','Sx','Sp','O','N','de','Ud','DD','tdD','qdD','Qnd','SxD','SpD','OcD','NvD','Vgn','UVg','DVg','qtV','QnV','SeV','SPG','OVG','NVG','TGN','UTG','DTG','tsTG','qtTG','QnTG']
+  if (number >= Math.pow(10,(abbrev.length*3)+3)) {
+    return number.toFixed(1)
   }
-    
   // Go through the array backwards, so we do the largest first
   for (var i = abbrev.length - 1; i >= 0; i--) {
     // Convert array index to "1000", "1000000", etc
