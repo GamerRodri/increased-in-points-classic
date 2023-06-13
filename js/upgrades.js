@@ -14,7 +14,12 @@ let amountBought = [0,0,0,0]
 let ucDef = [0,10,50,250]
 let abDef = [0,0,0,0]
 // Other variables go here
-let automateCount = 0.01
+let automateCount = 0
+let automateMulti = 0
+
+setInterval(function() {
+  points += automateCount + automateMulti;
+}, 10)
 
 for (let i=1;i<upgradeCosts.length;i++) {
   document.querySelector(`#upgrade${i}`).addEventListener("click", () => {
@@ -25,11 +30,9 @@ for (let i=1;i<upgradeCosts.length;i++) {
       if (i==1) {
         multi += prMulti
       } else if (i==2) {
-        automationInterval = setInterval(() => {
-            points += automateCount;
-          }, 10)
+        automateCount += 0.01
         } else if (i==3) {
-          automateCount += 0.1
+          automateMulti += 0.1
         }
       }
     }

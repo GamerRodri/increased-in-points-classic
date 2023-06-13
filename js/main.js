@@ -41,8 +41,8 @@ function openTab(evt, tabName) {
 let pointsPerSecond = 0;
 
 document.querySelector("#upgrade2").addEventListener("click", () => {
-  if (points >= upgradeCost2) {
-    pointsPerSecond += 1;
+  if (points >= upgradeCosts[2]) {
+    pointsPerSecond++;
   }
 });
 
@@ -105,24 +105,27 @@ document.querySelector("button#prestige").addEventListener("click", () => {
   pointsPerSecond = 0;
   upgradeCosts = ucDef
   amountBought = abDef
-  automateCount = 0.01;
+  automateCount = 0;
+  automateMulti = 0;
 });
-
-document.querySelector("button#prestige").addEventListener("click", () => {
-  clearInterval(automationInterval);
-})
 
 // Update text
 setInterval(function() {  
+  for (let i=1;i<upgradeCosts.length;i++) {
+    document.querySelector(`#upgradeCost${i}`).textContent = abv(upgradeCosts[i].toFixed(1));
+    document.querySelector(`#amountBought${i}`).textContent = amountBought[i]
+  }
   document.querySelector("#points").textContent = abv(points.toFixed(1));
+  document.querySelector("span#pps").textContent = (pointsPerSecond + automateMulti * 100).toFixed(1);
+  document.querySelector("#multiplier").textContent = multi;
+  /*
   document.querySelector("#upgradeCost1").textContent = abv(upgradeCosts[1].toFixed(1));
   document.querySelector("#upgradeCost2").textContent = abv(upgradeCosts[2].toFixed(1));
   document.querySelector("#upgradeCost3").textContent = abv(upgradeCosts[3].toFixed(1));
-  document.querySelector("span#pps").textContent = (automateCount * 1000 * pointsPerSecond / 10).toFixed(1);
-  document.querySelector("#multiplier").textContent = multi;
   document.querySelector("#amountBought1").textContent = amountBought[1];
   document.querySelector("#amountBought2").textContent = amountBought[2];
   document.querySelector("#amountBought3").textContent = amountBought[3];
+  */
 }, 10);
 
 // Get the radio buttons
