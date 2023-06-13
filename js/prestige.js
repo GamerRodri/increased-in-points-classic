@@ -2,6 +2,7 @@ let prestigeRequirement = 1000000
 let fullPrestigeReq = 0
 let prMulti = 1
 let morePrestige = 1
+let moreAutoMulti = 1
 
 setInterval(function() {
 if (points >= prestigeRequirement) {
@@ -18,11 +19,11 @@ document.querySelector("#prestige-amount").textContent = abv((fullPrestigeReq / 
 ////////////////////////////////////
 
 // Upgrade costs go here
-let prUpgradeCosts = [0,10,50]
-let prAmountBought = [0,0,0]
+let prUpgradeCosts = [0,10,30,70]
+let prAmountBought = [0,0,0,0]
 
-let pUcDef = [0,10,50]
-let pAbDef = [0,0,0]
+let pUcDef = [0,10,30,70]
+let pAbDef = [0,0,0,0]
 
 for (let i=1;i<prUpgradeCosts.length;i++) {
   document.querySelector(`#pr-upgrade${i}`).addEventListener("click", () => {
@@ -34,6 +35,8 @@ for (let i=1;i<prUpgradeCosts.length;i++) {
         prMulti++
       } else if (i==2) {
         morePrestige++
+        } else if (i==3) {
+        moreAutoMulti++
         }
       }
     }

@@ -31,10 +31,10 @@ for (let i=1;i<upgradeCosts.length;i++) {
       if (i==1) {
         multi += prMulti
       } else if (i==2) {
-        automateCount += 0.01
+        automateCount += 0.01 * moreAutoMulti
         pointsPerSecond++
         } else if (i==3) {
-          automateMulti += 10
+          automateMulti += 10 * moreAutoMulti
         }
       }
     }
