@@ -4,6 +4,6 @@ Increased In Points is a incremental game based on one variable called Points, y
 You can play the game here: https://gamerrodri.github.io/increased-in-points
 ### Other
 Please note that the game is in alpha, so please report any bugs you find in Issues. Thanks! - ming736
-The full changelog can be viewed here: https://github.com/GamerRodri/increased-in-points/compare/Alpha-release...main
+The full changelog can be viewed here: https://github.com/GamerRodri/increased-in-points/compare/main...Alpha-release
 
 
