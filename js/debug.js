@@ -9,6 +9,10 @@ DebugSystem.AddPrestigePoints = (p) => {
   prestigePoints += p
 }
 
+DebugSystem.AddCrystals = (p) => {
+  crystals += p
+}
+
 DebugSystem.AddMulti = (p) => {
   multi += p
 }
