@@ -5,7 +5,10 @@ let abv = (number, decPlaces) => {
 
   // Enumerate number abbreviations, now up to qtV!
   var abbrev = ['K', 'M', 'B', 'T','qd','Qn','Sx','Sp','O','N','de','Ud','DD','tdD','qdD','Qnd','SxD','SpD','OcD','NvD','Vgn','UVg','DVg','qtV']
-
+  if (number >= Math.pow(10,abbrev.length)) {
+    return number
+  }
+    
   // Go through the array backwards, so we do the largest first
   for (var i = abbrev.length - 1; i >= 0; i--) {
     // Convert array index to "1000", "1000000", etc
@@ -24,9 +27,7 @@ let abv = (number, decPlaces) => {
       }
 
       // Add the letter for the abbreviation
-      if (number <= Math.pow(10,abbrev.length)) {
         number += abbrev[i]
-      }
 
       // We are done... stop
       break
