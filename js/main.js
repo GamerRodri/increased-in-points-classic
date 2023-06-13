@@ -94,7 +94,7 @@ document.querySelector("button#prestige").addEventListener("click", () => {
   upgradeCosts = ucDef
   amountBought = abDef
   automateCount = 0;
-  automateMulti = 0;
+  automateMulti = 1;
 });
 
 // Update text
