@@ -22,8 +22,15 @@ document.querySelector("#prestige-amount").textContent = abv((fullPrestigeReq / 
 let prUpgradeCosts = [0,10,30,70]
 let prAmountBought = [0,0,0,0]
 
-let pUcDef = [0,10,30,70]
-let pAbDef = [0,0,0,0]
+// These variables are permanent and should not change
+let prUcDef = [0,10,30,70]
+let prAbDef = [0,0,0,0]
+
+setInterval (function() {
+  prUcDef = [0,10,30,70]
+  prAbDef = [0,0,0,0]
+}, 10)
+// These variables are permanent and should not change
 
 for (let i=1;i<prUpgradeCosts.length;i++) {
   document.querySelector(`#pr-upgrade${i}`).addEventListener("click", () => {
@@ -32,7 +39,7 @@ for (let i=1;i<prUpgradeCosts.length;i++) {
         prestigePoints -= prUpgradeCosts[i]
         prUpgradeCosts[i] *= 1.6
       if (i==1) {
-        prMulti++
+        prMulti += cyMulti
       } else if (i==2) {
         morePrestige++
         } else if (i==3) {
@@ -50,4 +57,4 @@ setInterval(function() {
         document.querySelector(`#prUpgradeCost${i}`).textContent = abv(prUpgradeCosts[i].toFixed(2));
         document.querySelector(`#prAmountBought${i}`).textContent = prAmountBought[i];
     }
-}, 0);
+}, 10);

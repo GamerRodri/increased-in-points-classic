@@ -1,18 +1,14 @@
 // Upgrade costs go here
-// old code
-let upgradeCost1 = 10;
-let amountBought1 = 0;
-let upgradeCost2 = 50;
-let amountBought2 = 0;
-let upgradeCost3 = 250;
-let amountBought3 = 0;
-//0 is to skip javascript's first index number in a table, which is 0
-//define tables
+// 0 is to skip javascript's first index number in a table, which is 0
+// Define tables
 let upgradeCosts = [0,10,50,250]
 let amountBought = [0,0,0,0]
 
+// These variables are permanent and should not change
 let ucDef = [0,10,50,250]
 let abDef = [0,0,0,0]
+// These variables are permanent and should not change
+
 // Other variables go here
 let automateCount = 0;
 let automateMulti = 1;
@@ -20,6 +16,10 @@ let pointsPerSecond = 0;
 
 setInterval(function() {
   points += automateCount * automateMulti;
+  // These variables are permanent and should not change
+  ucDef = [0,10,50,250]
+  abDef = [0,0,0,0]
+  // These variables are permanent and should not change
 }, 10)
 
 for (let i=1;i<upgradeCosts.length;i++) {
@@ -32,7 +32,6 @@ for (let i=1;i<upgradeCosts.length;i++) {
         multi += prMulti
       } else if (i==2) {
         automateCount += 0.01 * moreAutoMulti
-        pointsPerSecond++
         } else if (i==3) {
           automateMulti += 10 * moreAutoMulti
         }

@@ -60,11 +60,7 @@ button.tablinks{
     padding: 3px 20px;
 }
 
-.prestige-upgrades{
-    display: none;
-}
-
-#tablink5{
+.prestige-upgrades, .crystal-upgrades{
     display: none;
 }
 
@@ -77,13 +73,31 @@ button#prestige{
     margin-top: 10px;
 }
 
+button#crystallize{
+    display: none;
+    background-color: rgba(212, 0, 255, 0.1);
+    border-color: rgb(233, 136, 255);
+    color: rgb(250, 226, 255);
+    text-shadow: 0px 0px 7px #e600ff;
+    margin-top: 35px;
+}
+
 button#prestige:hover {
     background: rgba(0, 200, 255, 50%);
     cursor: pointer;
 }
 
+button#crystallize:hover {
+    background: rgba(212, 0, 255, 30%);
+    cursor: pointer;
+}
+
 #tablink3,#tablink4{
     float: right;
+}
+
+#tablink5, #tablink6{
+    display: none;
 }
 
 hr#tab {
@@ -182,12 +196,18 @@ h2#prestige{
     display: none;
     margin: 0px;
     font-size: 100px;
-    border-color: #8df;
     text-shadow: 0px 0px 20px #00c8ff;
 }
 
-h2#pr-upgs-header{
-    margin-top: 50px;
+h2#crystals{
+    display: none;
+    margin: 0px;
+    font-size: 100px;
+    text-shadow: 0px 0px 20px #e600ff;
+}
+
+h2#pr-upgs-header, h2#cy-upgs-header{
+    margin-top: 15px;
     margin-bottom: 0px;
 }
 
@@ -232,11 +252,22 @@ p#prestige1, p#prestige2{
     display: none;
     margin: 0px;
     font-size: 30px;
-    border-color: #8df;
     color: rgb(226, 243, 255);
     text-shadow: 0px 0px 20px #00c8ff;
 }
 
+p#crystals1, p#crystals2{
+    display: none;
+    margin: 0px;
+    font-size: 30px;
+    color: rgb(251, 226, 255);
+    text-shadow: 0px 0px 20px #e600ff;
+}
+
 p#prestige1{
+    margin-top: 20px;
+}
+
+p#crystals1{
     margin-top: 20px;
 }

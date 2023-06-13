@@ -13,6 +13,7 @@ let upgradesPurchased = localStorage.getItem("upgrades");
 let points = 0;
 let multi = 1;
 let prestigePoints = 0;
+let crystals = 0;
 document.querySelector("#multiplier").textContent = multi;
 document.querySelector("#clicker").addEventListener("click", () => {
   points += multi;
@@ -40,10 +41,6 @@ document.querySelector("#tablink1").addEventListener("click", () => {
   document.querySelector("#points").style.fontSize = "100px"; 
   document.querySelector("#points").style.marginBottom = "0px";
   document.querySelector("#points").style.display = "block";
-  document.querySelector("#credits-header1").style.display = "none";
-  document.querySelector("#credits1").style.display = "none";
-  document.querySelector("#credits-header2").style.display = "none";
-  document.querySelector("#credits2").style.display = "none";
 });
 
 document.querySelector("#tablink2").addEventListener("click", () => {
@@ -51,10 +48,6 @@ document.querySelector("#tablink2").addEventListener("click", () => {
   document.querySelector("#points").style.fontSize = "30px";
   document.querySelector("#points").style.marginBottom = "5px";
   document.querySelector("#points").style.display = "block";
-  document.querySelector("#credits-header1").style.display = "none";
-  document.querySelector("#credits1").style.display = "none";
-  document.querySelector("#credits-header2").style.display = "none";
-  document.querySelector("#credits2").style.display = "none";
 });
 
 document.querySelector("#tablink3").addEventListener("click", () => {
@@ -68,10 +61,6 @@ document.querySelector("#tablink3").addEventListener("click", () => {
 document.querySelector("#tablink4").addEventListener("click", () => {
   document.querySelector("#points").style.display = "none";
   document.querySelector(".options-panel").style.display = "flex";
-  document.querySelector("#credits-header1").style.display = "none";
-  document.querySelector("#credits1").style.display = "none";
-  document.querySelector("#credits-header2").style.display = "none";
-  document.querySelector("#credits2").style.display = "none";
 });
 
 document.querySelector("#tablink5").addEventListener("click", () => {
@@ -81,6 +70,14 @@ document.querySelector("#tablink5").addEventListener("click", () => {
   document.querySelector("h2#prestige").style.display = "block";
   document.querySelector(".prestige-upgrades").style.display = "block";
   document.querySelector("h2#prestige").textContent = abv(prestigePoints.toFixed(2));
+});
+
+document.querySelector("#tablink6").addEventListener("click", () => {
+  document.querySelector("#points").style.display = "none";
+  document.querySelector("p#crystals1").style.display = "block";
+  document.querySelector("p#crystals2").style.display = "block";
+  document.querySelector("h2#crystals").style.display = "block";
+  document.querySelector(".crystal-upgrades").style.display = "block";
 });
 // Tablink scripts end here
 
@@ -93,6 +90,22 @@ document.querySelector("button#prestige").addEventListener("click", () => {
   pointsPerSecond = 0;
   upgradeCosts = ucDef
   amountBought = abDef
+  automateCount = 0;
+  automateMulti = 1;
+});
+
+document.querySelector("button#crystallize").addEventListener("click", () => {
+  // Unlock Prestige tab
+  document.querySelector("#tablink6").style.display = "inline-block";
+  crystals += fullCrystallizeReq / 7500;
+  prestigePoints = 0;
+  points = 0;
+  multi = 1;
+  pointsPerSecond = 0;
+  upgradeCosts = ucDef;
+  amountBought = abDef;
+  prUpgradeCosts = prUcDef;
+  prAmountBought = prAbDef;
   automateCount = 0;
   automateMulti = 1;
 });

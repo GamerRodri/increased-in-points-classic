@@ -7,7 +7,7 @@
   <title>Increased In Points</title>
 </head>
 <body>
-  <h1>Increased In Points<sub>v0.1.2</sub></h1>
+  <h1>Increased In Points<sub>v0.2.0</sub></h1>
   
   <div class="tab">
     <button class="tablinks" span id="tablink1" onclick="openTab(event, 'Points')">Points</button>
@@ -15,6 +15,7 @@
     <button class="tablinks" span id="tablink3" onclick="openTab(event, 'Credits')">Credits</button>
     <button class="tablinks" span id="tablink4" onclick="openTab(event, 'Options')">Options</button>
     <button class="tablinks" span id="tablink5" onclick="openTab(event, 'Prestige')">Prestige</button>
+    <button class="tablinks" span id="tablink6" onclick="openTab(event, 'Crystals')">Crystals</button>
   </div>
   <hr id="tab">
   <p id="points">0.0</p>
@@ -63,6 +64,7 @@
     <p id="prestige1">You have:</p>
     <h2 id="prestige">0.0</h2>
     <p id="prestige2">prestige points.</p>
+    <button id="crystallize">Crystallize and get +<span id="crystal-amount">0</span> crystals.</button>
     <div class="prestige-upgrades">
       <h2 id="pr-upgs-header">Prestige Upgrades</h2>
       <hr id="pr-upgs">
@@ -74,11 +76,23 @@
     </div>
   </div>
 
+  <div id="Crystals" class="tabcontent">
+    <p id="crystals1">You have:</p>
+    <h2 id="crystals">0.0</h2>
+    <p id="crystals2">crystals.</p>
+    <div class="crystal-upgrades">
+      <h2 id="cy-upgs-header">Crystallize Upgrades</h2>
+      <button id="cy-upgrade1"><span id="cyAmountBought1">0</span>Omega Points<h6>Multi is increased for U.P</h6><h6>Costs: <span id="cyUpgradeCost1">25</span>cys</h6></button>
+      <hr id="cy-upgs">
+    </div>
+  </div>
+
   <!-- define scripts -->
   <script src="js/debug.js"></script>
   <script src="js/main.js"></script>
   <script src="js/upgrades.js"></script>
   <script src="js/prestige.js"></script>
+  <script src="js/crystallize.js"></script>
   <script src="js/abv.js"></script>
   <!-- end definition -->
 </body>
