@@ -42,7 +42,7 @@ button:hover {
     cursor: pointer;
 }
 
-#amountBought1, #amountBought2, #amountBought3, #prAmountBought1, #prAmountBought2, #prAmountBought3, #cyAmountBought1{
+.amountBought{
     font-size: 15px;
     margin: -4% -10%;
     float: right; 
