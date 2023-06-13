@@ -48,7 +48,7 @@ button:hover {
     float: right; 
 }
 
-#prAmountBought1{
+#prAmountBought1, #prAmountBought2{
     font-size: 15px;
     margin: -4% -10%;
     float: right; 

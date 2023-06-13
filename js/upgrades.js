@@ -14,11 +14,12 @@ let amountBought = [0,0,0,0]
 let ucDef = [0,10,50,250]
 let abDef = [0,0,0,0]
 // Other variables go here
-let automateCount = 0
-let automateMulti = 0
+let automateCount = 0;
+let automateMulti = 1;
+let pointsPerSecond = 0;
 
 setInterval(function() {
-  points += automateCount + automateMulti;
+  points += automateCount * automateMulti;
 }, 10)
 
 for (let i=1;i<upgradeCosts.length;i++) {
@@ -31,8 +32,9 @@ for (let i=1;i<upgradeCosts.length;i++) {
         multi += prMulti
       } else if (i==2) {
         automateCount += 0.01
+        pointsPerSecond++
         } else if (i==3) {
-          automateMulti += 0.1
+          automateMulti += 10
         }
       }
     }

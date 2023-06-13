@@ -34,14 +34,6 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
 }
 
-let pointsPerSecond = 0;
-
-document.querySelector("#upgrade2").addEventListener("click", () => {
-  if (points >= upgradeCosts[2]) {
-    pointsPerSecond++;
-  }
-});
-
 // Tablink scripts start here
 document.querySelector("#tablink1").addEventListener("click", () => {
   document.querySelector("#points").classList.remove("upgrades-active");
@@ -95,7 +87,7 @@ document.querySelector("#tablink5").addEventListener("click", () => {
 document.querySelector("button#prestige").addEventListener("click", () => {
   // Unlock Prestige tab
   document.querySelector("#tablink5").style.display = "inline-block";
-  prestigePoints += fullPrestigeReq / 2500
+  prestigePoints += fullPrestigeReq / 2500 
   points = 0;
   multi = 1;
   pointsPerSecond = 0;
@@ -112,7 +104,7 @@ setInterval(function() {
     document.querySelector(`#amountBought${i}`).textContent = amountBought[i]
   }
   document.querySelector("#points").textContent = abv(points.toFixed(1));
-  document.querySelector("span#pps").textContent = (pointsPerSecond + automateMulti * 100).toFixed(1);
+  document.querySelector("span#pps").textContent = (automateCount * automateMulti * 100).toFixed(1);
   document.querySelector("#multiplier").textContent = multi;
   /*
   document.querySelector("#upgradeCost1").textContent = abv(upgradeCosts[1].toFixed(1));
@@ -136,7 +128,7 @@ titleStyleRadios.forEach(radio => {
     // Update the title based on selected option
     setInterval(function() {
       if (titleStyle == 1) {
-        document.title = 'Increased in Points - ' + abv(points.toFixed(1));
+        document.title = 'Increased In Points - ' + abv(points.toFixed(1));
       } else {
         document.title = 'Increased In Points'; 
       }

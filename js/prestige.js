@@ -1,6 +1,7 @@
 let prestigeRequirement = 1000000 
 let fullPrestigeReq = 0
 let prMulti = 1
+let morePrestige = 1
 
 setInterval(function() {
 if (points >= prestigeRequirement) {
@@ -17,21 +18,33 @@ document.querySelector("#prestige-amount").textContent = abv((fullPrestigeReq / 
 ////////////////////////////////////
 
 // Upgrade costs go here
-let prUpgradeCost1 = 10
-let prAmountBought1 = 0
+let prUpgradeCosts = [0,10,50]
+let prAmountBought = [0,0,0]
 
-document.querySelector("#pr-upgrade1").addEventListener("click", () => {
-    if (prestigePoints >= prUpgradeCost1) {
-      prestigePoints -= prUpgradeCost1;
-      prMulti++;
-      prUpgradeCost1 *= 1.6;
-      prAmountBought1++;
+let pUcDef = [0,10,50]
+let pAbDef = [0,0,0]
+
+for (let i=1;i<prUpgradeCosts.length;i++) {
+  document.querySelector(`#pr-upgrade${i}`).addEventListener("click", () => {
+    if (prestigePoints >= prUpgradeCosts[i]) {
+        prAmountBought[i] += 1
+        prestigePoints -= prUpgradeCosts[i]
+        prUpgradeCosts[i] *= 1.6
+      if (i==1) {
+        prMulti++
+      } else if (i==2) {
+        morePrestige++
+        }
+      }
     }
-});
+  )
+}
 
 // Update text ( for prestige tab )
 setInterval(function() {
     document.querySelector("h2#prestige").textContent = abv(prestigePoints.toFixed(2));
-    document.querySelector("#prUpgradeCost1").textContent = abv(prUpgradeCost1.toFixed(2));
-    document.querySelector("#prAmountBought1").textContent = prAmountBought1;
+    for (let i=1;i<prUpgradeCosts.length;i++) {
+        document.querySelector(`#prUpgradeCost${i}`).textContent = abv(prUpgradeCosts[i].toFixed(2));
+        document.querySelector(`#prAmountBought${i}`).textContent = prAmountBought[i];
+    }
 }, 0);
