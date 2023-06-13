@@ -16,9 +16,6 @@ let prestigePoints = 0;
 document.querySelector("#multiplier").textContent = multi;
 document.querySelector("#clicker").addEventListener("click", () => {
   points += multi;
-  document.querySelector("#points").textContent = abv(points.toFixed(1));
-  if (points >= 10) {
-  }
 });
 
 document.getElementById("Upgrades").style.display = "none";
@@ -35,7 +32,6 @@ function openTab(evt, tabName) {
   }
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
-  document.querySelector("#points").textContent = abv(points.toFixed(1));
 }
 
 let pointsPerSecond = 0;
