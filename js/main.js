@@ -35,7 +35,7 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
 }
 
-const cancelButton = document.querySelector('.choices-cancel');
+/* const cancelButton = document.querySelector('.choices-cancel');
 cancelButton.addEventListener('click', () => {
   document.querySelector('.choiceboard-ui').style.animation = 'slideOut 0.5s';
   document.querySelector('.darken').style.display = 'none';
@@ -54,7 +54,7 @@ choiceboardButton.addEventListener('click', () => {
   document.body.appendChild(overlay);
   choiceboard.style.display = 'block';
   document.querySelector('.darken').style.display = 'block';
-});
+}); */
 
 // Tablink scripts start here
 document.querySelector("#tablink1").addEventListener("click", () => {
