@@ -39,6 +39,6 @@ let abv = (number, decPlaces) => {
   return number
   } catch (e) {
     return orNum
-    console.warn(`If you're seeing this, tell ming736 he absolutely screwed up the abv.js because an error occured. Error Details: \n ${e}`)
+    console.warn(`If you're seeing this, tell ming736 he absolutely screwed up the abv.js code because an error occured. Error Details: \n ${e}`)
   } 
 }
