@@ -94,7 +94,6 @@ document.querySelector("#tablink5").addEventListener("click", () => {
 });
 
 document.querySelector("#tablink6").addEventListener("click", () => {
-  document.querySelector("#choiceboard").style.display = "block";
   document.querySelector("#points").style.display = "none";
   document.querySelector("p#crystals1").style.display = "block";
   document.querySelector("p#crystals2").style.display = "block";
