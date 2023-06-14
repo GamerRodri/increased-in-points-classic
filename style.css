@@ -48,7 +48,134 @@ button:hover {
     float: right; 
 }
 
-button.tablinks{
+.choiceboard-ui {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    background: rgba(0, 0, 0, 0.7);
+    border: 3px solid #fff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+@keyframes slideIn {
+    0% {
+        top: 60%;
+        opacity: 0;
+    }
+    100% {
+        top: 50%;
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        top: 50%;
+        opacity: 1;
+    }
+    100% {
+        top: 60%;
+        opacity: 0;
+    }
+}
+
+.choices {
+    display: flex;
+    justify-content: space-around;
+    margin: 5px;
+}
+
+button.choices {
+    font-size: 50px;
+    padding: 14px 0px 10px 0px;
+    display: block;
+}
+
+.choices-cancel {
+    float: right;
+    margin-top: 5px;
+    margin-right: 5px;
+    padding: 1px 4px;
+}
+
+.choices-cancel:active {
+    transform: scale(0.95);
+}
+
+.darken {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    animation: darken 0.5s; 
+}
+
+.undarken {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    animation: undarken 0.5s; 
+}
+
+@keyframes darken {
+    0% {
+      background: rgba(0, 0, 0, 0);
+    }
+    100% {
+      background: rgba(0, 0, 0, 0.3);
+    }
+}
+
+@keyframes undarken {
+    0% {
+      background: rgba(0, 0, 0, 0.3); 
+    }
+    100% {
+      background: rgba(0, 0, 0, 0);
+    }
+}
+
+
+.brighten {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: brighten 5s;
+}
+
+@keyframes brighten {
+    0% {
+      background: transparent;
+    }
+    100% {
+      background: white;
+    }
+}
+
+@keyframes unbrighten {
+    0% {
+      background: white;
+    }
+    100% {
+      background: transparent;
+    }
+}
+
+
+button.tablinks {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
     padding: 3px 20px;
@@ -58,7 +185,7 @@ button.tablinks{
     display: none;
 }
 
-button#prestige{
+button#prestige {
     display: none;
     background-color: rgba(0, 200, 255, 10%);
     border-color: #8df;
@@ -67,13 +194,36 @@ button#prestige{
     margin-top: 10px;
 }
 
-button#crystallize{
+button#crystallize {
     display: none;
     background-color: rgba(212, 0, 255, 0.1);
     border-color: rgb(233, 136, 255);
     color: rgb(250, 226, 255);
     text-shadow: 0px 0px 7px #e600ff;
     margin-top: 35px;
+}
+
+button#choiceboard {
+    display: none;
+    background: linear-gradient(180deg, #ffffff17, #ffffff15, #ffffff17);
+    color: #fff;
+    margin-top: 35px;
+}
+
+#choice1 {
+    background: linear-gradient(180deg, #ffef3a40, #ffef3a25, #ffef3a40);
+}
+
+#choice1:hover {
+    background: linear-gradient(180deg, #ffef3a60, #ffef3a45, #ffef3a60);
+}
+
+#choice2 {
+    background: linear-gradient(180deg, #fef4ff40, #fef4ff25, #fef4ff40);
+}
+
+#choice2:hover {
+    background: linear-gradient(180deg, #fef4ff60, #fef4ff45, #fef4ff60);
 }
 
 button#prestige:hover {
@@ -83,6 +233,11 @@ button#prestige:hover {
 
 button#crystallize:hover {
     background: rgba(212, 0, 255, 30%);
+    cursor: pointer;
+}
+
+button#choiceboard:hover {
+    background: linear-gradient(180deg, #ffffff37, #ffffff35, #ffffff37);
     cursor: pointer;
 }
 
@@ -205,6 +360,11 @@ h2#pr-upgs-header, h2#cy-upgs-header{
     margin-bottom: 0px;
 }
 
+h5#choices {
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
 h6{
     margin: 0px;
 }
@@ -264,4 +424,16 @@ p#prestige1{
 
 p#crystals1{
     margin-top: 20px;
+}
+
+p#choices {
+    font-size: 30px;
+    margin-top: 15px;
+    margin-bottom: 3px;
+}
+
+p#choice-desc {
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 15px;
 }

@@ -35,6 +35,27 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
 }
 
+const cancelButton = document.querySelector('.choices-cancel');
+cancelButton.addEventListener('click', () => {
+  document.querySelector('.choiceboard-ui').style.animation = 'slideOut 0.5s';
+  document.querySelector('.darken').style.display = 'none';
+  document.querySelector('.undarken').style.display = 'block';
+  setTimeout(() => {
+    document.querySelector('.choiceboard-ui').style.display = 'none';
+    document.querySelector('.undarken').style.display = 'none'; 
+  }, 450);
+});
+
+const choiceboardButton = document.querySelector('#choiceboard');
+const choiceboard = document.querySelector('.choiceboard-ui');
+const overlay = document.createElement('div');
+choiceboardButton.addEventListener('click', () => {
+  document.querySelector('.choiceboard-ui').style.animation = 'slideIn 0.5s';
+  document.body.appendChild(overlay);
+  choiceboard.style.display = 'block';
+  document.querySelector('.darken').style.display = 'block';
+});
+
 // Tablink scripts start here
 document.querySelector("#tablink1").addEventListener("click", () => {
   document.querySelector("#points").classList.remove("upgrades-active");
@@ -73,6 +94,7 @@ document.querySelector("#tablink5").addEventListener("click", () => {
 });
 
 document.querySelector("#tablink6").addEventListener("click", () => {
+  document.querySelector("#choiceboard").style.display = "block";
   document.querySelector("#points").style.display = "none";
   document.querySelector("p#crystals1").style.display = "block";
   document.querySelector("p#crystals2").style.display = "block";
@@ -117,7 +139,7 @@ setInterval(function() {
     document.querySelector(`#amountBought${i}`).textContent = amountBought[i]
   }
   document.querySelector("#points").textContent = abv(points.toFixed(1));
-  document.querySelector("span#pps").textContent = abv((automateCount * automateMulti * 100).toFixed(1));
+  document.querySelector("span#pps").textContent = abv((automateCount * automateMulti * multiIncrease * 100).toFixed(1));
   document.querySelector("#multiplier").textContent = abv((multi * multiIncrease).toFixed(multiToFixedChange));
   /*
   document.querySelector("#upgradeCost1").textContent = abv(upgradeCosts[1].toFixed(1));
