@@ -9,7 +9,11 @@ let abv = (number, decPlaces) => {
   // Enumerate number abbreviations, now up to qtV!
   try {
   if (number >= Math.pow(10,(abbrev.length*3)+3)) {
-    return new Number(number).toFixed(decPlaces)
+    if (decPlaces <= 100) {
+      return new Number(number).toFixed(decPlaces)
+    } else {
+      return new Number(number).toFixed(3)
+    }
   }
   // Go through the array backwards, so we do the largest first
   for (var i = abbrev.length - 1; i >= 0; i--) {
