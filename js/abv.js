@@ -1,4 +1,4 @@
-let abbrev = ['K', 'M', 'B', 'T','qd','Qn','Sx','Sp','O','N','de','Ud','DD','tdD','qdD','Qnd','SxD','SpD','OcD','NvD','Vgn','UVg','DVg','qtV','QnV','SeV','SPG','OVG','NVG','TGN','UTG','DTG','tsTG','qtTG','QnTG']
+let abbrev = ['K', 'M', 'B', 'T','qd','Qn','Sx','Sp','O','N','de','Ud','DD','tdD','qdD','Qnd','SxD','SpD','OcD','NvD','Vgn','UVg','DVg','qtV','QnV','SeV','SPG','OVG','NVG','TGN','UTG','DTG','tsTG','qtTG','QnTG','ssTG','SpTG','OcTG','NoTG','QdDR','uQDR','dQDR','tQDR','qdQDR','QnQDR','SxQDR','SpQDR','OQDDR','NQDDR']
 console.log(`Abbreviations should be able to go up to ${Math.pow(10,(abbrev.length*3)+3)}`)
 let abv = (number, decPlaces) => {
   let orNum = number
