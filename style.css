@@ -42,10 +42,18 @@ button:hover {
     cursor: pointer;
 }
 
+#pr-upgrade4{
+    display: none;
+}
+
 .amountBought{
     font-size: 15px;
     margin: -4% -10%;
     float: right; 
+}
+
+.amountBought-maxWidth{
+    font-size: 30px;
 }
 
 .choiceboard-ui {
@@ -148,6 +156,7 @@ button.choices {
 
 
 .brighten {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -156,9 +165,21 @@ button.choices {
     animation: brighten 5s;
 }
 
+.unbrighten {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    animation-delay: 2s;
+    animation: unbrighten 5s;
+}
+
 @keyframes brighten {
     0% {
-      background: transparent;
+      background: rgba(0, 0, 0, 0);
     }
     100% {
       background: white;
@@ -170,7 +191,7 @@ button.choices {
       background: white;
     }
     100% {
-      background: transparent;
+      background: rgba(0, 0, 0, 0);
     }
 }
 
@@ -181,7 +202,7 @@ button.tablinks {
     padding: 3px 20px;
 }
 
-.prestige-upgrades, .crystal-upgrades{
+.prestige-upgrades, .crystal-upgrades, .tierize-upgrades{
     display: none;
 }
 
@@ -203,11 +224,40 @@ button#crystallize {
     margin-top: 35px;
 }
 
+button#tierize {
+    display: none;
+    background: linear-gradient(180deg, #ffef3a60, #ffef3a45, #ffef3a60);
+    border-color: rgb(255, 252, 226);
+    color: rgb(255, 252, 226);
+    text-shadow: 0px 0px 7px #ffe100;
+    margin-top: 35px;
+}
+
+button#milestone {
+    display: none;
+    background: linear-gradient(180deg, #fef4ff40, #fef4ff30, #fef4ff40);
+    border-color: #f8ebf9;
+    color: #f8ebf9;
+    text-shadow: 0px 0px 7px #f8ebf990;
+    margin-top: 35px;
+}
+
 button#choiceboard {
     display: none;
-    background: linear-gradient(180deg, #ffffff17, #ffffff15, #ffffff17);
+    background: linear-gradient(180deg, #ffffff17, #ffffff10, #ffffff17);
     color: #fff;
     margin-top: 35px;
+}
+
+.tr-upgrade {
+    width: 100%;
+    background: linear-gradient(180deg, #ffef3a40, #ffef3a25, #ffef3a40);
+    margin-bottom: 20px;
+}
+
+.tr-upgrade:hover {
+    background: linear-gradient(180deg, #ffef3a60, #ffef3a45, #ffef3a60);
+    cursor: pointer;
 }
 
 #choice1 {
@@ -223,7 +273,31 @@ button#choiceboard {
 }
 
 #choice2:hover {
-    background: linear-gradient(180deg, #fef4ff60, #fef4ff45, #fef4ff60);
+    background: linear-gradient(180deg, #fef4ff60, #fef4ff42, #fef4ff60);
+}
+
+
+.milestone-desc{
+    font-size: 30px;
+    vertical-align: top;
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+h2.milestone-list{
+    display: none;
+    font-size: 60px;
+    margin: 10px;
+    text-align: center;
+    background: linear-gradient(180deg, #fef4ff40, #fef4ff25, #fef4ff40);
+    border: 2px solid;
+    border-color: rgb(255, 252, 226);
+    border-radius: 10px;
+    text-shadow: 0px 0px 7px #ffffff;
+}
+
+#milestone1.unlocked, #milestone2.unlocked, #milestone3.unlocked, #milestone4.unlocked, #milestone5.unlocked, #milestone6.unlocked, #milestone7.unlocked, #milestone8.unlocked, #milestone9.unlocked, #milestone10.unlocked{
+    background: linear-gradient(180deg, #5cff5c40, #5cff5c25, #5cff5c40);
 }
 
 button#prestige:hover {
@@ -241,11 +315,21 @@ button#choiceboard:hover {
     cursor: pointer;
 }
 
+button#tierize:hover {
+    background: linear-gradient(180deg, #ffef3a80, #ffef3a65, #ffef3a80);
+    cursor: pointer;
+}
+
+button#milestone:hover {
+    background: linear-gradient(180deg, #fef4ff60, #fef4ff50, #fef4ff60);
+    cursor: pointer;
+}
+
 #tablink3,#tablink4{
     float: right;
 }
 
-#tablink5, #tablink6{
+#tablink5, #tablink6, #tablink7, #tablink8{
     display: none;
 }
 
@@ -355,6 +439,21 @@ h2#crystals{
     text-shadow: 0px 0px 20px #e600ff;
 }
 
+h2#tr-upgs-header, hr#tr-upgs{
+    margin: 5px;
+}
+
+hr#tr-upgs{
+    margin-bottom: 10px;
+}
+
+h2#tr-upgs-header{
+    font-size: 40px;
+    margin-top: 40px;
+    margin-bottom: 5px;
+    text-shadow: 0px 0px 0px #00000000;
+}
+
 h2#pr-upgs-header, h2#cy-upgs-header{
     margin-top: 15px;
     margin-bottom: 0px;
@@ -424,6 +523,54 @@ p#prestige1{
 
 p#crystals1{
     margin-top: 20px;
+}
+
+p#tierize, p#tierize2, p#tierize3, .tierize-upgrades{
+    display: none;
+    margin: 0px;
+    font-size: 40px;
+    text-align: center;
+    text-shadow: 0px 0px 20px #ffef3a;
+}
+
+p#milestone{
+    display: none;
+    margin: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    text-align: center;
+    text-shadow: 0px 0px 20px #fde7ff;
+}
+
+p#tierize2{
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+p#tierize3{
+    font-size: 25px;
+}
+
+p#tier1, p#tier2{
+    display: none;
+    text-shadow: 0px 0px 5px #ffef3a;
+    text-align: left;
+    margin: 0px;
+    font-size: 40px;
+}
+
+p#tier1{
+    margin-bottom: 10px;
+}
+
+p#tier2{
+    text-shadow: 0px 0px 15px #ffef3a;
+    text-align: center;
+}
+
+span.tier-lvl-status1, span.tier-lvl-status2{
+    font-size: 20px;
 }
 
 p#choices {

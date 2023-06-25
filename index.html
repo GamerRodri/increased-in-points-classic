@@ -9,6 +9,16 @@
 <body>
   <h1>Increased In Points<sub id="versiontxt">v0.0.0</sub></h1>
   
+  <div class="choiceboard-ui" style="z-index: 1;">
+    <button class="choices-cancel">X</button>
+    <p id="choices">You have a choice...</p>
+    <h5 id="choices">You can pick a reset layer to unlock but the other reset layer's requirement triples.</h5>
+    <div class="choices">
+      <button class="choices" id="choice1"><span>Tierize</span><p id="choice-desc">Tierize adds a level system that multiplies your resources everytime you advance one tier.</p></button>
+      <button class="choices" id="choice2"><span>Milestone</span><p id="choice-desc">You can only do one Milestone per reset but Milestones grant extreme perks every Milestone that help you advance!</p></button>
+    </div>
+  </div>
+
   <div class="tab">
     <button class="tablinks" span id="tablink1" onclick="openTab(event, 'Points')">Points</button>
     <button class="tablinks" span id="tablink2" onclick="openTab(event, 'Upgrades')">Upgrades</button>
@@ -16,6 +26,8 @@
     <button class="tablinks" span id="tablink4" onclick="openTab(event, 'Options')">Options</button>
     <button class="tablinks" span id="tablink5" onclick="openTab(event, 'Prestige')">Prestige</button>
     <button class="tablinks" span id="tablink6" onclick="openTab(event, 'Crystals')">Crystals</button>
+    <button class="tablinks" span id="tablink7" onclick="openTab(event, 'Tierize')">Tierize</button>
+    <button class="tablinks" span id="tablink8" onclick="openTab(event, 'Milestone')">Milestone</button>
   </div>
   <hr id="tab">
   <p id="points">0.0</p>
@@ -28,13 +40,14 @@
 
   <div id="Points" class="tabcontent">
     <p id="pps">(<span id="pps">0.0</span>pts/s)</p>
+    <p id="tier1">Tier <span id="tier-lvl1">0</span><span class="tier-lvl-status1"> (<span id="tierlvl-points1">0</span>tp/<span id="tierlvl-req1">0</span>tp)</span></p>
     <button id="clicker">Click for +<span id="multiplier">0</span>pts</button>
     <br>
     <button id="prestige">Prestige and get +<span id="prestige-amount">0</span> prestige points.</button>
   </div>
   
   <div id="Upgrades" class="tabcontent">
-    <button id="upgrade1"><span class="amountBought" id="amountBought1">0</span>Extra Points<h6>+x1 Multiplier</h6><h6>Costs: <span id="upgradeCost1">10</span>pts</h6></button>
+    <button id="upgrade1"><span class="amountBought" id="amountBought1">0</span>Extra Points<h6>+100% more points</h6><h6>Costs: <span id="upgradeCost1">10</span>pts</h6></button>
     <button id="upgrade2"><span class="amountBought" id="amountBought2">0</span>Automation<h6>+0.01 points every ms</h6><h6>Costs: <span id="upgradeCost2">50</span>pts</h6></button>
     <button id="upgrade3"><span class="amountBought" id="amountBought3">0</span>Double The Goods<h6>Automation scales further</h6><h6>Costs: <span id="upgradeCost3">250</span>pts</h6></button>
   </div>
@@ -43,7 +56,7 @@
     <p id="credits-header1">Inspiration</p>
     <p id="credits1">Omega Layers by Veprogames<br>Cookie Clicker by Orteil<br>Grass Cutting Incremental by LethalDolphin</p>
     <p id="credits-header2">Coding</p>
-    <p id="credits2">Code by RodriGamer and from Sourcegraph Cody<br>Other code by ming736<br>CSS Tips from <a href="https://www.w3schools.com/">W3Schools</a></p>
+    <p id="credits2">Code by RodriGamer and most from Sourcegraph Cody<br>Other code by ming736<br>CSS Tips from <a href="https://www.w3schools.com/">W3Schools</a></p>
   </div>
 
   <div id="Options" class="tabcontent">
@@ -69,9 +82,10 @@
       <h2 id="pr-upgs-header">Prestige Upgrades</h2>
       <hr id="pr-upgs">
       <!-- prestige upgrades -->
-      <button id="pr-upgrade1"><span class="amountBought" id="prAmountBought1">0</span>Ultra Points<h6>Multi is increased for E.P</h6><h6>Costs: <span id="prUpgradeCost1">10</span>PP</h6></button>
-      <button id="pr-upgrade2"><span class="amountBought" id="prAmountBought2">0</span>More PP<h6>PP Multiplier is higher</h6><h6>Costs: <span id="prUpgradeCost2">30</span>PP</h6></button>
-      <button id="pr-upgrade3"><span class="amountBought" id="prAmountBought3">0</span>More Automation<h6>Automation Multiplier is higher</h6><h6>Costs: <span id="prUpgradeCost3">70</span>PP</h6></button>
+      <button class="pr-upgrade" id="pr-upgrade1"><span class="amountBought" id="prAmountBought1">0</span>Ultra Points<h6>Multi is increased for E.P</h6><h6>Costs: <span id="prUpgradeCost1">10</span>PP</h6></button>
+      <button class="pr-upgrade" id="pr-upgrade2"><span class="amountBought" id="prAmountBought2">0</span>More PP<h6>PP Multiplier is higher</h6><h6>Costs: <span id="prUpgradeCost2">30</span>PP</h6></button>
+      <button class="pr-upgrade" id="pr-upgrade3"><span class="amountBought" id="prAmountBought3">0</span>More Automation<h6>Automation Multiplier is higher</h6><h6>Costs: <span id="prUpgradeCost3">70</span>PP</h6></button>
+      <button class="pr-upgrade" id="pr-upgrade4"><span class="amountBought" id="prAmountBought4">0</span>More Reset Multi<h6>The Reset Multiplier is higher</h6><h6>Costs: <span id="prUpgradeCost4">120</span>PP</h6></button>
       <!-- end definition -->
     </div>
   </div>
@@ -80,15 +94,59 @@
     <p id="crystals1">You have:</p>
     <h2 id="crystals">0.0</h2>
     <p id="crystals2">crystals.</p>
-    <div class="crystal-upgrades">
+    <button id="choiceboard">You have a choice... (<span id="choices-amount">2</span> choices)</button>
+    <button id="tierize"><span id="tierize-status">Tierize only once but</span> get a <span id="tierize-amount">1</span>+ boost.</button>
+    <button id="milestone">Milestone <span id="milestone-amount1">only once</span> <span id="milestone-amount2">but</span> get an extreme perk.</button>
+    <div class="crystal-upgrades">  
       <h2 id="cy-upgs-header">Crystallize Upgrades</h2>
       <hr id="cy-upgs">
       <!-- crystal upgrades -->
-      <button id="cy-upgrade1"><span class="amountBought" id="cyAmountBought1">0</span>Omega Points<h6>Multi is increased for U.P</h6><h6>Costs: <span id="cyUpgradeCost1">25</span>cys</h6></button>
-      <button id="cy-upgrade2"><span class="amountBought" id="cyAmountBought2">0</span>Increased In Points<h6>Point gain increases overtime</h6><h6>Costs: <span id="cyUpgradeCost2">80</span>cys</h6></button>
+      <button class="cy-upgrade" id="cy-upgrade1"><span class="amountBought" id="cyAmountBought1">0</span>Omega Points<h6>Multi is increased for U.P</h6><h6>Costs: <span id="cyUpgradeCost1">25</span>cys</h6></button>
+      <button class="cy-upgrade" id="cy-upgrade2"><span class="amountBought" id="cyAmountBought2">0</span>More Crystals<h6>Crystal multiplier is higher</h6><h6>Costs: <span id="cyUpgradeCost2">40</span>cys</h6></button>
+      <button class="cy-upgrade" id="cy-upgrade3"><span class="amountBought" id="cyAmountBought3">0</span>Increased In Points<h6>Point gain increases overtime</h6><h6>Costs: <span id="cyUpgradeCost3">80</span>cys</h6></button>
+      <button class="cy-upgrade" id="cy-upgrade4"><span class="amountBought" id="cyAmountBought4">0</span>Multiplied In Points<h6>I.I.P upgrade is multiplied</h6><h6>Costs: <span id="cyUpgradeCost4">500</span>cys</h6></button>
       <!-- end definition -->
     </div>
   </div>
+
+  <div id="Tierize" class="tabcontent">
+    <p id="tierize">You have tierized <span id="tierize-count">0</span> times</p>
+    <p id="tierize2">Translated to a x<span id="tierize-multi">0</span> boost on tier gain.</p>
+    <p id="tierize3">You have <span id="tierize-points">0</span> tier points.</p>
+    <p id="tier2">Tier <span id="tier-lvl2">0</span><span class="tier-lvl-status2"> (<span id="tierlvl-points2">0</span>tp/<span id="tierlvl-req2">0</span>tp)</span></p>
+    <div class="tierize-upgrades">
+      <h2 id="tr-upgs-header">Tierize Upgrades</h2>
+      <hr id="tr-upgs">
+      <!-- tierize upgrades -->
+      <button class="tr-upgrade" id="tr-upgrade1">More Tier Points <span class="amountBought-maxWidth">(<span id="trAmountBought1">0</span>)</span><h6>Tier point gain is multiplied by +x1</h6><h6>Costs: <span id="trUpgradeCost1">500</span>tp</h6></button>
+      <button class="tr-upgrade" id="tr-upgrade2">Tiering With Ease <span class="amountBought-maxWidth">(<span id="trAmountBought2">0</span>)</span><h6>The requirement for tiering is divided by +1</h6><h6>Costs: <span id="trUpgradeCost2">2K</span>tp</h6></button>
+      <button class="tr-upgrade" id="tr-upgrade3">Higher Boosts <span class="amountBought-maxWidth">(<span id="trAmountBought3">0</span>)</span><h6>Boosts are multiplied by +x0.2</h6><h6>Costs: <span id="trUpgradeCost3">8K</span>tp</h6></button>
+      <!-- end definition -->
+    </div>
+  </div>
+
+  <div id="Milestone" class="tabcontent">
+    <p id="milestone">You are on milestone #<span id="milestone-count">0</span>.</p>
+      <div class="milestone-list">
+        <h2 class="milestone-list" id="milestone1"><span class="milestone-title">Milestone #1</span><p class="milestone-desc">• Earn 1500% more points per milestone</p><p class="milestone-desc">• Earn 300% more PP and Crystals per milestone</p><p class="milestone-desc">• Earn 3000% more points</p></h2>
+        <h2 class="milestone-list" id="milestone2"><span class="milestone-title">Milestone #2</span><p class="milestone-desc">• Unlock the "More Crystals" upgrade in crystallize</p><p class="milestone-desc">• The amount of how much you reset during the game is your points multiplier</p><p class="milestone-desc">• Points upgrades are worth half their original cost</p></h2>
+        <h2 class="milestone-list" id="milestone3"><span class="milestone-title">Milestone #3</span><p class="milestone-desc">• Milestone does not reset tiers</p><p class="milestone-desc">• Unlock a new prestige upgrade</p><p class="milestone-desc">• Earn 2000% more points</p></h2>
+        <h2 class="milestone-list" id="milestone4"><span class="milestone-title">Milestone #4</span><p class="milestone-desc">• Milestone does not reset tierize at all</p><p class="milestone-desc">• Milestone does not relock the other reset layers</p></h2>
+        <h2 class="milestone-list" id="milestone5"><span class="milestone-title">Milestone #5</span><p class="milestone-desc">• Tierize now subtracts and doesn't reset crystals</p><p class="milestone-desc">• You are no longer restricted to tierizing only once</p></h2>
+        <h2 class="milestone-list" id="milestone6"><span class="milestone-title">Milestone #6</span><p class="milestone-desc">• Earn 2000% more points per milestone</p><p class="milestone-desc">• All reset layers now subtracts instead of resetting</p></h2>
+        <h2 class="milestone-list" id="milestone7"><span class="milestone-title">Milestone #7</span><p class="milestone-desc">• All reset layers doesn't reset upgrades anymore</p><p class="milestone-desc">• The "Increased In Points" upgrade is 400% stronger</p></h2>
+        <h2 class="milestone-list" id="milestone8"><span class="milestone-title">Milestone #8</span><p class="milestone-desc">• All other upgrades are worth half their original cost</p><p class="milestone-desc">• Points upgrades are worth a third of their original cost</p><p class="milestone-desc">• The "Double The Goods" upgrade is 75000% stronger</p></h2>
+        <h2 class="milestone-list" id="milestone9"><span class="milestone-title">Milestone #9</span><p class="milestone-desc">• Tier point gain is more accurate</p><p class="milestone-desc">• The "Double The Goods" upgrade is multiplied by the tiers's power</p></h2>
+        <h2 class="milestone-list" id="milestone10"><span class="milestone-title">Milestone #10</span><p class="milestone-desc">• You are no longer restricted to milestoning only once</p><p class="milestone-desc">• Unlock a new crystal upgrade</p></h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="darken"></div>
+  <div class="undarken"></div>
+
+  <div class="brighten"></div>
+  <div class="unbrighten"></div>
 
   <!-- define scripts -->
   <!-- main scripts -->
@@ -100,6 +158,8 @@
   <!-- layer scripts -->
   <script src="js/reset-layers/prestige.js"></script>
   <script src="js/reset-layers/crystallize.js"></script>
+  <script src="js/reset-layers/tierize.js"></script>
+  <script src="js/reset-layers/milestone.js"></script>
   <!-- end definition -->
 </body>
 </html>

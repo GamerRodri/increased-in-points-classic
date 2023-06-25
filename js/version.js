@@ -1,4 +1,4 @@
-let ver = "0.3.0-pre1"
+let ver = "0.3.0"
 
 console.warn(`Running on real version ${ver}, as the one in the title may not be accurate.`)
 

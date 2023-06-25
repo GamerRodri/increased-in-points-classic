@@ -3,15 +3,16 @@ let fullPrestigeReq = 0
 let prMulti = 1
 let morePrestige = 1
 let moreAutoMulti = 1
+let moreResetMulti = 1
 
 setInterval(function() {
-if (points >= prestigeRequirement) {
+if (points > prestigeRequirement) {
     document.querySelector("#prestige").style.display = "block";
 } else {
     document.querySelector("#prestige").style.display = "none";
 }
-fullPrestigeReq = points - prestigeRequirement  
-document.querySelector("#prestige-amount").textContent = abv((fullPrestigeReq / 2500).toFixed(2));
+fullPrestigeReq = points - prestigeRequirement
+document.querySelector("#prestige-amount").textContent = abv(((fullPrestigeReq / 2500) * morePrestige * PPandCrystalMulti).toFixed(2));
 }, 10);
 
 ////////////////////////////////////
@@ -19,16 +20,20 @@ document.querySelector("#prestige-amount").textContent = abv((fullPrestigeReq / 
 ////////////////////////////////////
 
 // Upgrade costs go here
-let prUpgradeCosts = [0,10,30,70]
-let prAmountBought = [0,0,0,0]
+let prUpgradeCosts = [0,10,30,70,120]
+let prAmountBought = [0,0,0,0,0]
 
 // These variables are permanent and should not change
-let prUcDef = [0,10,30,70]
-let prAbDef = [0,0,0,0]
+let prUcDef = [0,10,30,70,120]
+let prAbDef = [0,0,0,0,0]
 
 setInterval (function() {
-  prUcDef = [0,10,30,70]
-  prAbDef = [0,0,0,0]
+  if (milestones >= 8) {
+    prUcDef = [0,5,15,35,60]
+  } else {
+    prUcDef = [0,10,30,70,120]
+  }
+  prAbDef = [0,0,0,0,0]
 }, 10)
 // These variables are permanent and should not change
 
@@ -37,13 +42,15 @@ for (let i=1;i<prUpgradeCosts.length;i++) {
     if (prestigePoints >= prUpgradeCosts[i]) {
         prAmountBought[i] += 1
         prestigePoints -= prUpgradeCosts[i]
-        prUpgradeCosts[i] *= 1.6
+        prUpgradeCosts[i] *= (0.6 / upgsDivide) + 1
       if (i==1) {
         prMulti += cyMulti
       } else if (i==2) {
-        morePrestige++
+        morePrestige += 0.06
         } else if (i==3) {
-        moreAutoMulti++
+          moreAutoMulti++
+        } else if (i==4) {
+          moreResetMulti++
         }
       }
     }
@@ -52,7 +59,7 @@ for (let i=1;i<prUpgradeCosts.length;i++) {
 
 // Update text ( for prestige tab )
 setInterval(function() {
-    document.querySelector("h2#prestige").textContent = abv(prestigePoints,2);
+    document.querySelector("h2#prestige").textContent = abv(prestigePoints.toFixed(1));
     for (let i=1;i<prUpgradeCosts.length;i++) {
         document.querySelector(`#prUpgradeCost${i}`).textContent = abv(prUpgradeCosts[i].toFixed(1));
         document.querySelector(`#prAmountBought${i}`).textContent = prAmountBought[i];

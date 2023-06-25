@@ -7,7 +7,6 @@ let amountBought = [0,0,0,0]
 // Other variables go here
 let automateCount = 0;
 let automateMulti = 1;
-let pointsPerSecond = 0;
 
 // These variables are permanent and should not change
 let ucDef;
@@ -15,9 +14,19 @@ let abDef;
 // These variables are permanent and should not change
 
 setInterval(function() {
-  points += automateCount * automateMulti * multiIncrease;
+  if (milestones >= 9) {
+    points += automateCount * (automateMulti * Math.pow(3, tierLvl - 1)) * milestoneMulti;
+  } else {
+    points += automateCount * (automateMulti * tierLvl) * milestoneMulti;
+  }
   // These variables are permanent and should not change
-  ucDef = [0,10,50,250]
+  if (milestones >= 8) {
+    ucDef = [0,3.33,16.66,83.33]
+  } else if (milestones >= 2) {
+    ucDef = [0,5,25,125]
+  } else {
+    ucDef = [0,10,50,250]
+  }
   abDef = [0,0,0,0]
   // These variables are permanent and should not change
 }, 10)
@@ -27,7 +36,7 @@ for (let i=1;i<upgradeCosts.length;i++) {
     if (points >= upgradeCosts[i]) {
         amountBought[i] += 1
         points -= upgradeCosts[i]
-        upgradeCosts[i] *= 1.6
+        upgradeCosts[i] *= (0.6 / pointsUpgsDivide) + 1
       if (i==1) {
         multi += prMulti
       } else if (i==2) {
