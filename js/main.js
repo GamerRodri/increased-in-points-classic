@@ -76,7 +76,7 @@ choiceboardButton.addEventListener('click', () => {
   document.body.appendChild(overlay);
   choiceboard.style.display = 'block';
   document.querySelector('.darken').style.display = 'block';
-}); */
+});
 
 // Tablink scripts start here
 document.querySelector("#tablink1").addEventListener("click", () => {
