@@ -57,14 +57,6 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
 }
 
-setInterval (function() {
-  if (tierizeCount > 0) {
-    document.querySelector("p#tier1").style.display = "block";
-  } else {
-    document.querySelector("p#tier1").style.display = "none";
-  }
-}, 10)
-
 const cancelButton = document.querySelector('.choices-cancel');
 cancelButton.addEventListener('click', () => {
   document.querySelector('.choiceboard-ui').style.animation = 'slideOut 0.5s';
@@ -84,7 +76,7 @@ choiceboardButton.addEventListener('click', () => {
   document.body.appendChild(overlay);
   choiceboard.style.display = 'block';
   document.querySelector('.darken').style.display = 'block';
-});
+}); */
 
 // Tablink scripts start here
 document.querySelector("#tablink1").addEventListener("click", () => {
