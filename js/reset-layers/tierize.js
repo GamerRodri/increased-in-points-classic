@@ -26,7 +26,7 @@ setInterval(function() {
     }
     if (milestones >= 5) {
       fullTierizeReq = crystals - tierizeRequirement
-      document.querySelector("#tierize-amount").textContent = abv((fullTierizeReq / 13000).toFixed(0));
+      document.querySelector("#tierize-amount").textContent = abv((fullTierizeReq / 13000).toFixed(0), 6);
     }
   } else {
     document.querySelector("#tierize").style.display = "none";
@@ -88,17 +88,17 @@ for (let i=1;i<trUpgradeCosts.length;i++) {
 
 // Update text ( for tierize tab )
 setInterval(function() {
-    document.querySelector("span#tierize-count").textContent = abv(tierizeCount.toFixed(0));
-    document.querySelector("span#tierize-multi").textContent = abv((tierizeCount * boostMultiplier).toFixed(1));
-    document.querySelector("span#tierize-points").textContent = abv(tierPoints.toFixed(1));
-    document.querySelector("span#tierlvl-points1").textContent = abv(tierlvlPoints.toFixed(1));
-    document.querySelector("span#tier-lvl1").textContent = abv(tierLvl.toFixed(0));
-    document.querySelector("span#tierlvl-req1").textContent = abv(nxtLvl.toFixed(1));
-    document.querySelector("span#tierlvl-points2").textContent = abv(tierlvlPoints.toFixed(1));
-    document.querySelector("span#tier-lvl2").textContent = abv(tierLvl.toFixed(0));
-    document.querySelector("span#tierlvl-req2").textContent = abv(nxtLvl.toFixed(1));
+    document.querySelector("span#tierize-count").textContent = abv(tierizeCount.toFixed(0), 6);
+    document.querySelector("span#tierize-multi").textContent = abv((tierizeCount * boostMultiplier).toFixed(1), 6);
+    document.querySelector("span#tierize-points").textContent = abv(tierPoints.toFixed(1), 6);
+    document.querySelector("span#tierlvl-points1").textContent = abv(tierlvlPoints.toFixed(1), 6);
+    document.querySelector("span#tier-lvl1").textContent = abv(tierLvl.toFixed(0), 6);
+    document.querySelector("span#tierlvl-req1").textContent = abv(nxtLvl.toFixed(1), 6);
+    document.querySelector("span#tierlvl-points2").textContent = abv(tierlvlPoints.toFixed(1), 6);
+    document.querySelector("span#tier-lvl2").textContent = abv(tierLvl.toFixed(0), 6);
+    document.querySelector("span#tierlvl-req2").textContent = abv(nxtLvl.toFixed(1), 6);
     for (let i=1;i<trUpgradeCosts.length;i++) {
-        document.querySelector(`#trUpgradeCost${i}`).textContent = abv(trUpgradeCosts[i].toFixed(2));
+        document.querySelector(`#trUpgradeCost${i}`).textContent = abv(trUpgradeCosts[i].toFixed(2), 6);
         document.querySelector(`#trAmountBought${i}`).textContent = trAmountBought[i];
     }
 }, 10);

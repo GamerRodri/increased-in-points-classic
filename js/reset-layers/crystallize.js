@@ -13,7 +13,7 @@ if (prestigePoints > crystallizeRequirement) {
     document.querySelector("#crystallize").style.display = "none";
 }
 fullCrystallizeReq = prestigePoints - crystallizeRequirement
-document.querySelector("#crystal-amount").textContent = abv(((fullCrystallizeReq / 7500) * PPandCrystalMulti).toFixed(2));
+document.querySelector("#crystal-amount").textContent = abv(((fullCrystallizeReq / 7500) * PPandCrystalMulti).toFixed(2), 6);
 }, 10);
 
 ////////////////////////////////////
@@ -68,9 +68,9 @@ for (let i=1;i<cyUpgradeCosts.length;i++) {
 
 // Update text ( for crystallize tab )
 setInterval(function() {
-    document.querySelector("h2#crystals").textContent = abv(crystals.toFixed(2));
+    document.querySelector("h2#crystals").textContent = abv(crystals.toFixed(2), 6);
     for (let i=1;i<cyUpgradeCosts.length;i++) {
-        document.querySelector(`#cyUpgradeCost${i}`).textContent = abv(cyUpgradeCosts[i].toFixed(2));
+        document.querySelector(`#cyUpgradeCost${i}`).textContent = abv(cyUpgradeCosts[i].toFixed(2), 6);
         document.querySelector(`#cyAmountBought${i}`).textContent = cyAmountBought[i];
     }
 }, 10);

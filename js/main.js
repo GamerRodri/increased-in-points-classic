@@ -103,7 +103,7 @@ document.querySelector("#tablink3").addEventListener("click", () => {
 
 document.querySelector("#tablink4").addEventListener("click", () => {
   document.querySelector("#points").style.display = "none";
-  document.querySelector(".options-panel").style.display = "flex";
+  document.querySelector("#Options").style.display = "block";
 });
 
 document.querySelector("#tablink5").addEventListener("click", () => {
@@ -375,19 +375,19 @@ setInterval(function() {
 // Update text
 setInterval(function() {  
   for (let i=1;i<upgradeCosts.length;i++) {
-    document.querySelector(`#upgradeCost${i}`).textContent = abv(upgradeCosts[i].toFixed(1));
+    document.querySelector(`#upgradeCost${i}`).textContent = abv(upgradeCosts[i].toFixed(1), 6);
     document.querySelector(`#amountBought${i}`).textContent = amountBought[i]
   }
-  document.querySelector("#points").textContent = abv(points.toFixed(1));
+  document.querySelector("#points").textContent = abv(points.toFixed(1), 6);
   if (milestones >= 9) {
-    document.querySelector("span#pps").textContent = abv((automateCount * (automateMulti * Math.pow(3, tierLvl - 1)) * milestoneMulti * 100).toFixed(1));
+    document.querySelector("span#pps").textContent = abv((automateCount * (automateMulti * Math.pow(3, tierLvl - 1)) * milestoneMulti * 100).toFixed(1), 6);
   } else {
-    document.querySelector("span#pps").textContent = abv((automateCount * automateMulti * tierLvl * milestoneMulti * 100).toFixed(1));
+    document.querySelector("span#pps").textContent = abv((automateCount * automateMulti * tierLvl * milestoneMulti * 100).toFixed(1), 6);
   }
   if (milestones >= 2) {
-    document.querySelector("#multiplier").textContent = abv((multi * milestonePermMulti * (resetLayerCounts[1] + resetLayerCounts[2] + resetLayerCounts[3] + resetLayerCounts[4] * moreResetMulti) * Math.pow(3, tierLvl - 1) * milestoneMulti).toFixed(multiToFixedChange));
+    document.querySelector("#multiplier").textContent = abv((multi * milestonePermMulti * (resetLayerCounts[1] + resetLayerCounts[2] + resetLayerCounts[3] + resetLayerCounts[4] * moreResetMulti) * Math.pow(3, tierLvl - 1) * milestoneMulti).toFixed(multiToFixedChange), 6);
   } else {
-    document.querySelector("#multiplier").textContent = abv((multi * milestonePermMulti * Math.pow(2, tierLvl - 1) * milestoneMulti).toFixed(multiToFixedChange));
+    document.querySelector("#multiplier").textContent = abv((multi * milestonePermMulti * Math.pow(2, tierLvl - 1) * milestoneMulti).toFixed(multiToFixedChange), 6);
   }
 }, 10);
 
@@ -403,7 +403,7 @@ titleStyleRadios.forEach(radio => {
     // Update the title based on selected option
     setInterval(function() {
       if (titleStyle == 1) {
-        document.title = 'Increased In Points - ' + abv(points.toFixed(1));
+        document.title = 'Increased In Points - ' + abv(points.toFixed(1), 6);
       } else {
         document.title = 'Increased In Points'; 
       }

@@ -27,7 +27,7 @@ setInterval(function() {
 
 setInterval(function() {
     if (milestones >= 10) {
-        document.querySelector("#milestone-amount1").textContent = abv((fullMilestoneReq / 40000).toFixed(0));
+        document.querySelector("#milestone-amount1").textContent = abv((fullMilestoneReq / 40000).toFixed(0), 6);
     } else {
         document.querySelector("#milestone-amount1").textContent = "only once"
     }
@@ -72,5 +72,5 @@ setInterval(function() {
 
 // Update text ( for milestone tab )
 setInterval(function() {
-    document.querySelector("#milestone-count").textContent = abv(resetLayerCounts[4].toFixed(0));
+    document.querySelector("#milestone-count").textContent = abv(resetLayerCounts[4].toFixed(0), 6);
 }, 10);

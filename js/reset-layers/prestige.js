@@ -12,7 +12,7 @@ if (points > prestigeRequirement) {
     document.querySelector("#prestige").style.display = "none";
 }
 fullPrestigeReq = points - prestigeRequirement
-document.querySelector("#prestige-amount").textContent = abv(((fullPrestigeReq / 2500) * morePrestige * PPandCrystalMulti).toFixed(2));
+document.querySelector("#prestige-amount").textContent = abv(((fullPrestigeReq / 2500) * morePrestige * PPandCrystalMulti).toFixed(2), 6);
 }, 10);
 
 ////////////////////////////////////
@@ -59,9 +59,9 @@ for (let i=1;i<prUpgradeCosts.length;i++) {
 
 // Update text ( for prestige tab )
 setInterval(function() {
-    document.querySelector("h2#prestige").textContent = abv(prestigePoints.toFixed(1));
+    document.querySelector("h2#prestige").textContent = abv(prestigePoints.toFixed(1), 6);
     for (let i=1;i<prUpgradeCosts.length;i++) {
-        document.querySelector(`#prUpgradeCost${i}`).textContent = abv(prUpgradeCosts[i].toFixed(1));
+        document.querySelector(`#prUpgradeCost${i}`).textContent = abv(prUpgradeCosts[i].toFixed(1), 6);
         document.querySelector(`#prAmountBought${i}`).textContent = prAmountBought[i];
     }
 }, 10);
