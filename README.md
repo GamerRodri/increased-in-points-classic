@@ -1,7 +1,7 @@
 # Increased In Points
 Increased In Points is a incremental game based on one variable called Points, where you gain points by clicking on the "Click for +1 pts." button. You can buy upgrades to upgrade the amount of points per click, automation, and more! Want an extra challenge? Try prestiging! Maybe even try to crystallize! More will be coming soon. Have fun!
 # Game Link
-You can play the game [here](https://gamerrodri.github.io/increased-in-points).
+You can play the game [here](https://gamerrodri.github.io/increased-in-points-classic).
 
 
 ### Other
